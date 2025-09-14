@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midias em HTML5</title>
+</head>
+<body>
+    <H1>Imagens Dinâmicas</H1>
+    <p>Tente abrir esse site em varios dispositivos diferentes ou simplesmente aumenta e diminua o tamnho do seu navegador</p>
+    
+    <picture>
+        <source media="(max-width: 750px)" srcset="imagens/foto-p.png" type="image/png">
+        <source media="(max-width:1050px )" srcset="Imagens/foto-m.png" type="image/png">
+        <img src="imagens/foto-g.png" alt="Imagem flexivel">
+    </picture>
+
+    <h1>Reproduzir audio </h1>
+    <p>A tag &lt;audio&gt; serve para Reproduzir audio</p>
+   <audio  preload="metadata" autoplay controls loop >
+    <source src="audio/A Dyin' Breed - The Grey Room _ Density & Time.mp3" type="audio/mpeg">
+    <source src="audio/A Dyin' Breed - The Grey Room _ Density & Time.ogg" type="audio/ogg">
+    <source src="audio/A Dyin' Breed - The Grey Room _ Density & Time.wav" type="audio/wav">
+   </audio>
+</body>
+</html>

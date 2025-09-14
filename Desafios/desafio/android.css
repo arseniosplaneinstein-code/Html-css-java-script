@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #84e1ad; /* verde do fundo */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ====== CABEÇALHO ====== */
+header {
+    background-image: linear-gradient(to bottom, #3cd782, #1a5c37);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+header p {
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* ====== MENU ====== */
+nav {
+    padding: 10px;
+    text-align: center;
+    white-space: nowrap; 
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;   /* espaço entre links */
+    display: inline-block;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #c5ebd6;
+}
+
+/* ====== CONTEÚDO PRINCIPAL ====== */
+main {
+    background-color: white;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    border-radius: 8px;
+}
+
+h2, h3 {
+    background-image: linear-gradient(to right, #5ff0a0ea, #e3fcee);
+    font-family: 'idroid', sans-serif;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 15px 0;
+    white-space: nowrap;       /* impede quebra de linha */
+    overflow: hidden;          /* esconde excesso de texto */
+    text-overflow: ellipsis;   /* coloca "..." se o texto for maior que o box */
+}
+
+p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+img, picture, iframe {
+    display: block;
+    max-width: 100%;
+    margin: 10px auto;
+}
+
+/* ====== VÍDEO ====== */
+#video {
+    background-color: #1a5c37; /* fundo verde escuro */
+    margin-top: 20px;
+    margin: auto;
+    padding: 30px;
+     width: px;
+    
+}
+
+#video iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    display: block;
+    margin: 0;
+    border: none;
+   
+}
+
+
+#extra {
+    background-color: rgb(227, 241, 241);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#extra h2 {
+    background-color: #c5ebd6;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #3cd782;
+}
+
+/* ====== RODAPÉ ====== */
+footer {
+    background-color: #1a5c37;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    border-top: 3px solid #3cd782;
+    border-radius: 2px;
+}
+
+/* ====== RESPONSIVIDADE ====== */
+@media (max-width: 850px) {
+    picture img {
+        max-width: 95%;   /* ocupa até 95% da largura */
+        margin: 10px auto; /* centraliza com margens */
+        border-radius: 8px; /* opcional: deixa cantos arredondados */
+    }
+
+    main {
+        margin: 10px; /* dá respiro nas laterais no celular */
+        padding: 15px;
+    }
+}

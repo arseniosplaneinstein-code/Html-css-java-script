@@ -1,0 +1,17 @@
+@charset "UTF-8";
+body{
+    background-color: lightblue;
+    font: oblique;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+h1{
+    color: rgb(15, 13, 13);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: aliceblue;
+}
+h2{
+    color:red;
+
+  
+}
