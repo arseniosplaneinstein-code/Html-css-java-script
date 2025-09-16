@@ -54,7 +54,20 @@ input {
   padding: 8px;
   border-radius: 6px;
   border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
 }
+.form-row label{
+   width: 170px;          
+  text-align: right;     
+  margin-right: 4px;    
+  font-weight: bold;
+  font-size: 15px;
+  white-space: normal;   /* permite quebra de linha */
+  word-wrap: break-word;
+}
+
 
 
 .form-row button {
@@ -144,7 +157,7 @@ th {
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 640px) {
   label {
-    width: 120px;       /* labels mais estreitos em telas pequenas */
+    width: 120px;       
     font-size: 13px;
     font-weight: bold ;
     text-align: left;  
