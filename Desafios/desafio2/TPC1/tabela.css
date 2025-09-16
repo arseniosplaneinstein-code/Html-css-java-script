@@ -30,45 +30,29 @@ h1 {
   color: #333;
 }
 
-/* ===== FORMULÁRIO ===== */
+
 .form-row {
   display: flex;
   align-items: center;
   margin-bottom: 12px;
 }
 
-label {
-  width: 170px;          
-  text-align: right;     
-  margin-right: 4px;    
+.form-row label {
+  min-width: 170px;
+  text-align: right;
+  margin-right: 6px;
   font-weight: bold;
   font-size: 15px;
-  white-space: normal;   /* permite quebra de linha */
-  word-wrap: break-word; /* garante quebra */
+  white-space: nowrap; /* impede quebra do (Kz) */
 }
 
-
-input {
+.form-row input {
   flex: 1;
   max-width: 320px;
   padding: 8px;
   border-radius: 6px;
   border: 1px solid #ccc;
-  display: flex;
-  align-items: center;
-  margin-bottom: 12px;
 }
-.form-row label{
-   width: 170px;          
-  text-align: right;     
-  margin-right: 4px;    
-  font-weight: bold;
-  font-size: 15px;
-  white-space: normal;   /* permite quebra de linha */
-  word-wrap: break-word;
-}
-
-
 
 .form-row button {
   background: #dc3545;
@@ -77,12 +61,14 @@ input {
   border-radius: 6px;
   padding: 6px 12px;
   cursor: pointer;
+  margin-left: 8px;
 }
 
 .form-row button:hover {
   background: #a71d2a;
 }
 
+/* Botões principais */
 main > button {
   padding: 10px 20px;
   font-size: 15px;
@@ -97,6 +83,11 @@ main > button {
   background: #007BFF;
 }
 
+main > button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
 .btn_adicionar {
   background: #007BFF;
   color: white;
@@ -107,15 +98,10 @@ main > button {
   font-weight: bold;
   cursor: pointer;
   margin-top: 10px;
-  display: block;  
+  display: block;
 }
 
 .btn_adicionar:hover {
-  background: #0056b3;
-  transform: scale(1.05);
-}
-
-main > button:hover {
   background: #0056b3;
   transform: scale(1.05);
 }
@@ -156,24 +142,22 @@ th {
 
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 640px) {
- main label {
-    width: 120px;       
-    font-size: 13px;
-    font-weight: bold ;
-    text-align: left;  
-    margin: auto;
-    list-style-position: inside;
-   }
-
-  input {
-    max-width: 30%; 
-    margin: auto;   /* inputs ocupam o máximo possível */
+  .form-row {
+    flex-direction: row;     /* continua lado a lado */
+    flex-wrap: wrap;         /* se faltar espaço, quebra mas mantém alinhado */
+    justify-content: space-between;
   }
 
-  main {
-    width: 100%;
-    margin: 0;
-    padding: 15px;
+  .form-row label {
+    min-width: 120px;        /* encolhe o label */
+    font-size: 13px;
+    text-align: left;
+  }
+
+  .form-row input {
+    flex: 1;
+    min-width: 150px;        /* garante espaço no input */
+    max-width: 60%;          /* ocupa mais espaço que o label */
   }
 }
 
