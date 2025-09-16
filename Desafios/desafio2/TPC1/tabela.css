@@ -156,12 +156,14 @@ th {
 
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 640px) {
-  label {
+ main label {
     width: 120px;       
     font-size: 13px;
     font-weight: bold ;
     text-align: left;  
-    margin: auto; }
+    margin: auto;
+    list-style-position: inside;
+   }
 
   input {
     max-width: 30%; 
