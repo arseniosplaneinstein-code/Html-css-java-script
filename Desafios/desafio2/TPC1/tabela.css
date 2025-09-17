@@ -15,7 +15,6 @@ body {
 
 main {
   background: #fff;
-  border-radius: 10px;
   box-shadow: 5px 5px 10px #053a46ad;
   width: 100%;
   max-width: 900px;
@@ -28,6 +27,7 @@ h1 {
   margin-bottom: 20px;
   font-size: 28px;
   color: #333;
+  border-radius: 10px;
 }
 
 
@@ -87,8 +87,8 @@ main > button:hover {
   background: #0056b3;
   transform: scale(1.05);
 }
+t.btn_adicionar {
 
-.btn_adicionar {
   background: #007BFF;
   color: white;
   padding: 8px 15px;

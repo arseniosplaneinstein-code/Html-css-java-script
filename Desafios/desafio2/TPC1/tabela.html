@@ -11,7 +11,7 @@
 <main>
   <h1>Tabela de Salário Líquido</h1>
 
-  <!-- Salário Base -->
+ 
   <div id="areaSalario">
     <div class="form-row">
       <label for="inp_salbase">Salário base (Kz):</label>
@@ -34,7 +34,7 @@
   <button type="button" onclick="adicionarLinha()" class="btn_adicionar">+ Adicionar Subsídio</button>
   <button type="button" onclick="calcular()" class="btn_calcular">Calcular</button>
 
-  <!-- Tabela -->
+
   <table id="tabelaSubs">
     <thead>
       <tr>
@@ -67,7 +67,7 @@
     Ver Tabela do IRT
   </button>
 </main>
-
+          
 <script>
   function adicionarLinha() {
     let nome = prompt("Digite o nome do subsídio:");
@@ -154,6 +154,11 @@
     document.getElementById("td_irt").innerText = "-";
     document.getElementById("sal_liquido").innerText = "-";
   }
+
+
+
+
+
 </script>
 </body>
 </html>
