@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
@@ -21,11 +22,12 @@ main {
   border-radius: 10px;
 }
 
-h1 {
+main h1 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 28px;
-  color: #333;
+  color:black ;
+   text-shadow: 1px 2px 7px  #00000062;
 }
 
 .form-row {
@@ -44,7 +46,7 @@ h1 {
 }
 
 .form-row input {
-  width: 220px;
+  width: 190px;
   padding: 8px;
   border-radius: 6px;
   border: 1px solid #ccc;
@@ -95,12 +97,13 @@ main > button {
   border: none;
   cursor: pointer;
   margin: 10px auto;
-  display: flex;
+ display:flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
   transition: 0.3s;
   color: white;
+  
 }
 
 main > button i {
