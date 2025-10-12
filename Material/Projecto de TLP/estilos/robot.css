@@ -1,0 +1,394 @@
+@charset "UTF-8";
+
+/* ===== RESET ===== */
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+  font-family: "Poppins", sans-serif; 
+}
+
+body { 
+  background: linear-gradient(135deg, #040814, #0d47a1, #1976d2); 
+  color: white;
+  min-height: 200vh; 
+  overflow-x: hidden; 
+}
+
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
+  padding: 60px 20px; 
+  text-align: center;
+  transition: all 0.6s ease;
+}
+header img {
+  width: 140px;
+  animation: fadeUp 1s ease forwards;
+}
+header h1 {
+  font-size: 2.3rem; 
+  margin-top: 10px;
+  margin-bottom: 20px;
+  animation: glow 2s infinite alternate;
+  text-shadow: 0 0 15px #90caf9;
+}
+header p {
+  font-size: 1.2rem;
+  animation: fadeUp 2s ease forwards;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 6px #42a5f5; }
+  to { text-shadow: 0 0 15px #90caf9; }
+}
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(20px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  display: flex; 
+  justify-content: flex-start; 
+  align-items: center;
+  padding: 15px 35px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(12px); 
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.3);
+  transition: all 0.4s ease;
+}
+
+/* ===== LOGO PEQUENA (CANTO SUPERIOR ESQUERDO) ===== */
+.logo-small {
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  position: fixed; 
+  left: 25px; 
+  top: 15px;
+  animation: floatLogo 5s ease-in-out infinite;
+  z-index: 1001;
+}
+.logo-small img { 
+  width: 38px; 
+  height: 38px; 
+  border-radius: 50%; 
+  box-shadow: 0 0 8px #42a5f5;
+}
+@keyframes floatLogo {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* ===== MENU ===== */
+nav ul { 
+  display: flex; 
+  list-style: none; 
+  gap: 26px; 
+  margin-left: auto;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white; 
+  font-size: 1.2rem; 
+  padding: 10px;
+  border-radius: 12px;
+  transition: 0.3s ease;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  position: relative;
+}
+nav ul li a:hover {
+  color: #42a5f5; 
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 15px rgba(66,165,245,0.4);
+  transform: translateY(-2px);
+}
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #42a5f5;
+  transition: 0.3s ease;
+}
+nav ul li a:hover::after {
+  width: 80%;
+  left: 10%;
+}
+nav ul li a i {
+  margin-right: 6px;
+  font-size: 1.6rem;
+}
+
+/* ===== BOTÃO CADASTRAR ===== */
+.login-btn {
+  background: #42a5f5; 
+  border: none; 
+  padding: 9px 18px; 
+  border-radius: 20px;
+  cursor: pointer; 
+  transition: 0.3s; 
+  margin-left: 40px; 
+  color: white; 
+  font-weight: bold;
+  display: flex; 
+  align-items: center; 
+  gap: 8px;
+  font-size: 0.95rem;
+}
+.login-btn:hover { 
+  background: #1e88e5; 
+  transform: scale(1.08);
+  box-shadow: 0 0 18px #42a5f5;
+}
+
+/* ===== HERO ===== */
+.hero {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  height: 80vh; 
+  text-align: center; 
+  padding: 20px;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  animation: fadeIn 2s ease-in-out;
+}
+.hero button {
+  padding: 10px 20px;
+  font-size: 1rem; 
+  border: none; 
+  border-radius: 25px;
+  background: #42a5f5; 
+  color: white; 
+  cursor: pointer; 
+  transition: 0.3s;
+  display: flex; 
+  align-items: center; 
+  gap: 8px;
+}
+.hero button:hover { 
+  background: #1e88e5;
+  transform: scale(1.05); 
+}
+
+/* ===== SEÇÃO INFORMAR ===== */
+#informar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 25px;
+  margin: 100px auto;
+  width: 85%;
+  box-shadow: 0 0 25px rgba(66, 165, 245, 0.25);
+  backdrop-filter: blur(8px);
+  text-align: center;
+}
+#informar h2 {
+  font-size: 2rem;
+  color: #ffffff;
+  text-shadow: 0 0 10px #42a5f5;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.info-conjunto {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 100%;
+}
+.info-item {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 20px;
+  width: 300px;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 15px rgba(66, 165, 245, 0.25);
+}
+.info-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(66, 165, 245, 0.45);
+  background: rgba(255, 255, 255, 0.15);
+}
+.info-item img {
+  width: 100%;
+  height: 180px;
+  background-position: center center;
+  background-size: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 10px rgba(66, 165, 245, 0.4);
+}
+.info-item h3 {
+  color: #42a5f5;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+.info-item p {
+  color: #e3f2fd;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+
+/* ===== TECHBOT ===== */
+#techbot {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: rgba(66, 165, 245, 0.08);
+  border: 2px solid #42a5f5; 
+  border-radius: 20px; 
+  backdrop-filter: blur(6px);
+  padding: 15px 20px;
+  width: 250px;
+  box-shadow: 0 0 15px #1e88e5;
+  display: none; 
+  animation: fadeIn 1s ease forwards; 
+  z-index: 9999; 
+  text-align: center;
+}
+
+#techbot img {
+  width: 60px; 
+  height: 60px; 
+  border-radius: 50%;
+  animation: float 3s ease-in-out infinite; 
+  margin-bottom: 10px;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== BOTÕES DO TECHBOT ===== */
+#techbot-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 5px;
+}
+#techbot-buttons button {
+  border: none; 
+  border-radius: 12px; 
+  color: white;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  cursor: pointer; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 4px;
+  flex: 1;
+  min-width: 60px;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+/* ===== CORES DOS BOTÕES ===== */
+.btn-site { background-color: #42a5f5; }
+.btn-robot { background-color: #66bb6a; }
+.btn-off   { background-color: #ef5350; }
+
+#techbot-buttons button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* ===== BOTÃO REATIVAR TECHBOT ===== */
+#techbot-reactivate {
+    display: none;
+    position: fixed; 
+    bottom: 30px; 
+    right: 30px; 
+    width: 50px; 
+    height: 50px; 
+    background-color: #42a5f5; 
+    border-radius: 50%; 
+    justify-content: center; 
+    align-items: center; 
+    cursor: pointer;
+    box-shadow: 0 0 15px #1e88e5;
+    z-index: 10000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#techbot-reactivate:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px #1e88e5;
+}
+#techbot-reactivate i {
+    color: white; 
+    font-size: 1.5rem; 
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #90caf9;
+  background: #0000008e;
+  border-top: 1px solid #42a5f54d;
+  font-size: 0.9rem;
+}
+footer a {
+  font-weight: bold;
+  color: #8bc2ee;
+  text-decoration: none;
+}
+
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .info-conjunto {
+    flex-direction: column;
+    align-items: center;
+  }
+  .info-item {
+    width: 90%;
+  }
+}
+@media (max-width: 480px) {
+  nav ul { gap: 15px; }
+  nav ul li a { font-size: 1rem; padding: 8px; }
+  .login-btn { padding: 7px 14px; font-size: 0.85rem; margin-left: 20px; }
+  header h1 { font-size: 1.8rem; }
+  header p { font-size: 1rem; }
+  .hero p { font-size: 1rem; }
+  .hero button { font-size: 0.9rem; padding: 8px 16px; }
+}
+@media (max-width: 360px) {
+  nav { padding: 10px 15px; }
+  .logo-small { left: 15px; top: 10px; }
+  .logo-small img { width: 32px; height: 32px; }
+  #techbot { width: 220px; padding: 10px 15px; }
+  #techbot img { width: 50px; height: 50px; }
+}

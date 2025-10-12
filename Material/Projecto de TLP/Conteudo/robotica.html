@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Robótica</title>
+  <link rel="stylesheet" href="../estilos/robotica.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo-small" id="logoSmall">
+      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="Logo">
+      <span>Robótica</span>
+    </div>
+    <ul>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+      <li><a href="robotica.html"><i class="fa-solid fa-robot"></i></a></li>
+      <li><a href="servicos.html"><i class="fa-solid fa-gear"></i></a></li>
+      <li><a href="galeria.html"><i class="fa-solid fa-image"></i></a></li>
+      <li><a href="contato.html"><i class="fa-solid fa-envelope"></i></a></li>
+    </ul>
+    <button class="login-btn"><i class="fa-solid fa-user-plus"></i> Criar Conta</button>
+  </nav>
+
+  <!-- CABEÇALHO -->
+  <header>
+    <h1>🤖 A História da Robótica</h1>
+    <p>Da primeira ideia até os robôs inteligentes da atualidade</p>
+  </header>
+
+  <!-- NOVA SECÇÃO: SOBRE A ROBÓTICA -->
+  <section class="informacao">
+    <div class="imagem">
+      <img src="../imagens/inpor.jfif" alt="Robótica - Definição e importância">
+    </div>
+    <div class="conteudo">
+      <h2>📘 O Que é Robótica?</h2>
+      <p>
+        A <strong>robótica</strong> é um ramo da ciência e da tecnologia que estuda a criação e o desenvolvimento de robôs capazes de realizar tarefas de forma automática ou controlada.
+      </p>
+      <p>
+        O termo “robótica” surgiu em <strong>1942</strong>, criado pelo escritor <strong>Isaac Asimov</strong>, que também formulou as famosas “Três Leis da Robótica”.
+      </p>
+      <p>
+        A robótica é fundamental para o avanço da <strong>automação, inteligência artificial e inovação tecnológica</strong>.
+      </p>
+      <p>
+        Hoje em dia, os robôs são aplicados em diversas áreas como <strong>indústrias, hospitais, agricultura, culinária, desporto, segurança</strong> e até em <strong>missões espaciais</strong>.
+      </p>
+      <a href="galeria.html" class="ver-areas">🔍 Ver Áreas de Aplicação</a>
+    </div>
+  </section>
+
+  <!-- BLOCO 1 -->
+  <section class="informacao invertida">
+    <div class="imagem">
+      <img src="../imagens/The old man is fixing and repairing the android….jfif" alt="George Devol - Criador do primeiro robô">
+    </div>
+    <div class="conteudo">
+      <h2>👨‍🔬 O Início da Era Robótica</h2>
+      <p>
+        O engenheiro <strong>George Devol</strong> criou em 1954 o primeiro robô programável da história, chamado <strong>Unimate</strong>.
+        Ele foi usado em fábricas para mover peças metálicas e executar tarefas repetitivas com precisão.
+      </p>
+      <p>
+        Essa invenção deu origem à <strong>automação industrial</strong> e transformou completamente a forma como as fábricas funcionavam.
+      </p>
+    </div>
+  </section>
+
+  <!-- BLOCO 2 -->
+  <section class="informacao">
+    <div class="imagem">
+      <img src="../imagens/Fiat Powertrain Technologies Bielsko-Biała.jfif" alt="Unimate - primeiro robô industrial">
+    </div>
+    <div class="conteudo">
+      <h2>⚙️ A Evolução Industrial</h2>
+      <p>
+        Nos anos 60 e 70, os robôs começaram a ser usados em larga escala nas indústrias automobilísticas.
+        Eram grandes, robustos e controlados por sistemas mecânicos simples.
+      </p>
+      <p>
+        Apesar da limitação, eles aumentaram a produtividade e reduziram riscos para os trabalhadores.
+      </p>
+    </div>
+  </section>
+
+  <!-- BLOCO 3 -->
+  <section class="informacao invertida">
+    <div class="imagem">
+      <img src="../imagens/SOPHIA_ Robot humanoide desarrollado por la….jfif" alt="Sophia - robô humanoide moderno">
+    </div>
+    <div class="conteudo">
+      <h2>🤖 A Era da Inteligência Artificial</h2>
+      <p>
+        Hoje, os robôs são dotados de <strong>inteligência artificial</strong>, capazes de aprender, reconhecer rostos e até conversar com humanos.
+        Robôs como <strong>Sophia</strong> representam o avanço da robótica moderna.
+      </p>
+      <p>
+        A robótica atual é usada em <strong>hospitais, escolas, casas e missões espaciais</strong>, mostrando que o futuro já chegou.
+      </p>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <p>© 2025 Grupo Nº 03 | Página Educativa de Robótica</p>
+  </footer>
+
+  <script>
+    window.addEventListener("scroll", () => {
+      const nav = document.querySelector("nav");
+      if (window.scrollY > 100) {
+        nav.classList.add("show-logo");
+      } else {
+        nav.classList.remove("show-logo");
+      }
+    });
+  </script>
+
+</body>
+</html>
