@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Galeria</title>
+
+  <link rel="stylesheet" href="../estilos/galeria.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    /* ===== ESTILO GERAL ===== */
+    :root { --accent: #42a5f5; }
+    * { box-sizing: border-box; }
+    body {
+      background: linear-gradient(135deg, #040814, #0d47a1, #1976d2);
+      color: white;
+      min-height: 200vh;
+      overflow-x: hidden;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 15px 35px;
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.3);
+      transition: all 0.4s ease;
+    }
+
+    /* ===== LOGO PEQUENA (INICIALMENTE OCULTO) ===== */
+    .logo-small {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: center;
+      position: fixed;
+      left: 25px;
+      top: 15px;
+      z-index: 1001;
+      pointer-events: none;            /* evita focos acidentais enquanto oculto */
+      opacity: 0;                      /* começamos ocultos */
+      transform: translateY(-8px) scale(0.98);
+      transition: opacity 360ms ease, transform 360ms cubic-bezier(.2,.9,.2,1);
+    }
+
+    /* classe que mostra o logo */
+    .logo-small.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+      box-shadow: 0 0 8px var(--accent);
+    }
+
+    .logo-small img {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+    }
+
+    .logo-small span {
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-shadow: 0 0 8px rgba(0,0,0,0.3);
+      user-select: none;
+    }
+
+    @keyframes floatLogo {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    /* ===== MENU ===== */
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 26px;
+      margin-left: auto;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.2rem;
+      padding: 10px;
+      border-radius: 12px;
+      transition: 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    nav ul li a:hover {
+      color: var(--accent);
+      background: rgba(255,255,255,0.08);
+      box-shadow: 0 0 15px rgba(66,165,245,0.25);
+      transform: translateY(-2px);
+    }
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      bottom: 0; left: 50%;
+      width: 0; height: 2px;
+      background: var(--accent);
+      transition: 0.3s ease;
+    }
+    nav ul li a:hover::after { width: 80%; left: 10%; }
+    nav ul li a i { margin-right: 6px; font-size: 1.4rem; }
+
+    /* ===== BOTÃO CADASTRAR ===== */
+    .login-btn {
+      background: var(--accent);
+      border: none;
+      padding: 9px 18px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease;
+      margin-left: 40px;
+      color: white;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+    }
+    .login-btn:hover {
+      transform: scale(1.06);
+      box-shadow: 0 0 18px rgba(66,165,245,0.18);
+    }
+
+    /* ===== CABEÇALHO ===== */
+    header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 120px 20px 60px; /* espaço por causa da navbar fixa */
+      text-align: center;
+      transition: all 0.6s ease;
+    }
+
+    header h1 {
+      font-size: 2.3rem;
+      margin: 10px 0 20px;
+      animation: glow 2s infinite alternate;
+      text-shadow: 0 0 15px #90caf9;
+    }
+    header p { font-size: 1.2rem; animation: fadeUp 2s ease forwards; }
+
+    @keyframes glow { from { text-shadow: 0 0 6px #42a5f5 } to { text-shadow: 0 0 15px #90caf9 } }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(20px) } to { opacity:1; transform:translateY(0) } }
+
+    /* Pequena responsividade */
+    @media (max-width:560px) {
+      nav { padding: 12px 16px; }
+      .logo-small { left: 12px; top: 10px; }
+      nav ul { gap: 12px; }
+      header h1 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo-small" id="logoSmall" aria-hidden="true">
+      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="Logo Robótica">
+      <span>Robótica</span>
+    </div>
+
+    <ul>
+      <li><a href="index.html" title="Início"><i class="fa-solid fa-house"></i></a></li>
+      <li><a href="robotica.html" title="Robótica"><i class="fa-solid fa-robot"></i></a></li>
+      <li><a href="servicos.html" title="Serviços"><i class="fa-solid fa-gear"></i></a></li>
+      <li><a href="galeria.html" title="Galeria"><i class="fa-solid fa-image"></i></a></li>
+      <li><a href="contato.html" title="Contato"><i class="fa-solid fa-envelope"></i></a></li>
+    </ul>
+
+    <button class="login-btn" aria-label="Criar conta">
+      <i class="fa-solid fa-user-plus" aria-hidden="true"></i> Criar Conta
+    </button>
+  </nav>
+
+  <!-- CABEÇALHO -->
+  <header>
+    <h1>🤖 A História da Robótica</h1>
+    <p>Da primeira ideia até os robôs inteligentes da atualidade</p>
+  </header>
+
+  <!-- SCRIPTS: controla aparição do logo -->
+  <script>
+    (function() {
+      const logo = document.getElementById('logoSmall');
+      const showAfter = 100; // px de scroll para mostrar logo
+
+      function updateLogoVisibility() {
+        // se a posição de scroll for maior que showAfter, mostrar; caso contrário, ocultar
+        if (window.scrollY > showAfter) {
+          logo.classList.add('visible');
+          logo.setAttribute('aria-hidden', 'false');
+        } else {
+          logo.classList.remove('visible');
+          logo.setAttribute('aria-hidden', 'true');
+        }
+      }
+
+      // roda logo no load (caso a página carregue já com scroll)
+      window.addEventListener('DOMContentLoaded', updateLogoVisibility);
+      // atualiza quando rolar
+      window.addEventListener('scroll', updateLogoVisibility);
+      // também atualiza caso a janela seja redimensionada (por segurança)
+      window.addEventListener('resize', updateLogoVisibility);
+    })();
+  </script>
+
+</body>
+</html>
