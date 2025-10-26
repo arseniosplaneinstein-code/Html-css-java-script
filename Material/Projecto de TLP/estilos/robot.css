@@ -156,6 +156,24 @@ nav ul li a i {
   transform: scale(1.08);
   box-shadow: 0 0 18px #42a5f5;
 }
+.robot-gif-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.robot-gif {
+  width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #00bfff;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px #00bfff); }
+  50% { transform: scale(1.05); filter: drop-shadow(0 0 25px #00bfff); }
+}
 
 /* ===== HERO ===== */
 .hero {
@@ -365,6 +383,132 @@ footer a {
   text-decoration: none;
 }
 
+/* ===== MODAL LOGIN ===== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  display: flex;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(66, 165, 245, 0.4);
+  max-width: 900px;
+  width: 90%;
+  animation: showUp 0.6s ease;
+}
+
+@keyframes showUp {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Lado da imagem */
+.modal-image {
+  flex: 1;
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Lado do formulário */
+.modal-form {
+  flex: 1.2;
+  padding: 40px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #42a5f5;
+  text-shadow: 0 0 10px #42a5f5;
+}
+
+.input-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: #bbdefb;
+}
+
+.input-group input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  box-shadow: 0 0 10px #42a5f5;
+}
+
+.submit-btn {
+  background: #42a5f5;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background: #1e88e5;
+  box-shadow: 0 0 15px #42a5f5;
+}
+
+/* Texto alternar login/cadastro */
+#toggle-form {
+  text-align: center;
+  margin-top: 15px;
+  color: #bbdefb;
+  font-size: 0.9rem;
+}
+#toggle-form span {
+  color: #42a5f5;
+  cursor: pointer;
+  font-weight: bold;
+}
+#toggle-form span:hover {
+  text-decoration: underline;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .modal-content {
+    flex-direction: column;
+  }
+  .modal-image { display: none; }
+}
 
 /* ===== RESPONSIVO ===== */
 @media (max-width: 768px) {

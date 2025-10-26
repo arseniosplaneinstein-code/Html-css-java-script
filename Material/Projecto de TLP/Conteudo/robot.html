@@ -35,15 +35,17 @@
     </ul>
     <button class="login-btn"><i class="fa-solid fa-user-plus"></i> Criar Conta</button>
   </nav>
-
+<div class="robot-gif-container">
+  <img src="https://i.pinimg.com/originals/72/3e/0a/723e0a70634bb0b13b46454833a5c14b.gif" alt="Robô Futurista em Movimento" class="robot-gif">
+</div>
   
-    
   <!-- HERO -->
   <section class="hero" id="inicio">
     <button onclick="document.getElementById('informar').scrollIntoView({behavior:'smooth'})">
       <i class="fa-solid fa-arrow-down"></i> Explorar
     </button>
   </section>
+  
 
   <!-- INFORMAÇÕES -->
   <div id="informar">
@@ -85,95 +87,45 @@
     <p>© 2025 Grupo Nº 03 | Página Educativa de Robótica</p>
   </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const techbot = document.getElementById('techbot');
-      const buttonsContainer = document.getElementById('techbot-buttons');
-      const techbotSound = document.getElementById('techbot-sound');
-      const techbotReactivate = document.getElementById('techbot-reactivate');
-      const welcomeText = document.querySelector('.hero p');
-      const logoSmall = document.querySelector('.logo-small');
+  <!-- === MODAL DE LOGIN / CADASTRO === -->
+<div id="login-modal" class="modal">
+  <div class="modal-content">
+    <!-- Lado esquerdo com imagem -->
+    <div class="modal-image">
+      <img src="https://i.pinimg.com/originals/72/3e/0a/723e0a70634bb0b13b46454833a5c14b.gif" alt="Robô Futurista">
+    </div>
 
-      // Mostrar TechBot após 3s
-      setTimeout(() => {
-        techbot.style.display = 'block';
-        fadeIn(welcomeText);
-        speak("Olá! Eu sou o TechBot, o guia digital da Robótica Futurista. Quer ouvir sobre o site ou sobre robôs?");
-      }, 3000);
+    <!-- Lado direito com o formulário -->
+    <div class="modal-form">
+      <h2 id="form-title">Criar Conta</h2>
+      <form id="user-form">
+        <div class="input-group">
+          <label for="username">Nome de Usuário</label>
+          <input type="text" id="username" placeholder="Digite seu nome" required>
+        </div>
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Digite seu email" required>
+        </div>
+        <div class="input-group">
+          <label for="password">Senha</label>
+          <input type="password" id="password" placeholder="Digite sua senha" required>
+        </div>
+        <div class="input-group">
+          <label for="profile">Foto de Perfil</label>
+          <input type="file" id="profile" accept="image/*">
+        </div>
+        <button type="submit" class="submit-btn">Cadastrar</button>
+      </form>
 
-      function speak(text) {
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = "pt-PT";
-        utterance.rate = 1;
-        utterance.pitch = 1.1;
-        speechSynthesis.speak(utterance);
-      }
+      <p id="toggle-form">Já tem conta? <span>Acesse aqui</span></p>
+    </div>
+  </div>
+</div>
 
-      function playTechbotSound() {
-        techbotSound.currentTime = 0;
-        techbotSound.play();
-      }
 
-      techbot.addEventListener('click', (e) => {
-        if(e.target.tagName !== 'BUTTON') {
-          buttonsContainer.style.display = buttonsContainer.style.display === 'flex' ? 'none' : 'flex';
-          playTechbotSound();
-        }
-      });
-
-      window.techbotSpeakSite = function() {
-        playTechbotSound();
-        speak(" site Robótica Futurista tem várias áreas: Início, Robótica, Serviços, Galeria e Contato. Cada uma mostra o poder da tecnologia e inovação!");
-      }
-
-      window.techbotSpeakRobot = function() {
-        playTechbotSound();
-        speak("Os robôs são máquinas programáveis com sensores, motores e controladores. Eles podem perceber o ambiente, tomar decisões e realizar tarefas complexas. Isso é o que faz a robótica tão fascinante! ana paula dembos");
-      }
-
-      window.techbotBye = function() {
-        playTechbotSound();
-        speak("Até logo, humano! Desligando o modo de voz...");
-        fadeOut(welcomeText);
-        setTimeout(() => {
-          techbot.style.display = 'none';
-          techbotReactivate.style.display = 'flex';
-        }, 2500);
-      }
-
-      techbotReactivate.addEventListener('click', () => {
-        techbot.style.display = 'block';
-        techbotReactivate.style.display = 'none';
-        fadeIn(welcomeText);
-        speak("TechBot reativado! Estou de volta!");
-      });
-
-      function fadeIn(element) {
-        element.style.opacity = 0;
-        element.style.transition = "opacity 1.5s ease-in-out";
-        element.style.display = "block";
-        setTimeout(() => { element.style.opacity = 1; }, 50);
-      }
-
-      function fadeOut(element) {
-        element.style.opacity = 1;
-        element.style.transition = "opacity 1.5s ease-in-out";
-        element.style.opacity = 0;
-        setTimeout(() => { element.style.display = "none"; }, 1500);
-      }
-
-      // ===== LOGO SMALL APARECE AO SCROLL =====
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-          logoSmall.style.opacity = 1;
-          logoSmall.style.transform = "translateY(0)";
-        } else {
-          logoSmall.style.opacity = 0;
-          logoSmall.style.transform = "translateY(-20px)";
-        }
-      });
-    });
-  </script>
+  <!-- JS principal -->
+<script src="../interações/robot.js"></script>
 
 </body>
 </html>
