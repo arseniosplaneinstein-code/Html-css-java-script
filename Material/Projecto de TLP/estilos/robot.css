@@ -156,6 +156,7 @@ nav ul li a i {
   transform: scale(1.08);
   box-shadow: 0 0 18px #42a5f5;
 }
+
 .robot-gif-container {
   display: flex;
   justify-content: center;
@@ -510,6 +511,7 @@ footer a {
   .modal-image { display: none; }
 }
 
+
 /* ===== RESPONSIVO ===== */
 @media (max-width: 768px) {
   .info-conjunto {
@@ -535,4 +537,74 @@ footer a {
   .logo-small img { width: 32px; height: 32px; }
   #techbot { width: 220px; padding: 10px 15px; }
   #techbot img { width: 50px; height: 50px; }
+}
+/* Modal geral */
+
+.modal {
+  display: none;
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal.show {
+  display: flex;
+}
+
+
+/* Container de login/cadastro */
+.container {
+  background-color: #fff;
+  width: 90%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1001; /* sempre acima do fundo fosco */
+}
+
+/* Form boxes */
+.form-box {
+  padding: 2rem;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.form-box.register {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  opacity: 0;
+}
+
+/* Toggle panel */
+.toggle-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #eee;
+}
+
+.toggle-box button {
+  cursor: pointer;
+}
+
+/* Classes para alternar visibilidade */
+.container.active .form-box.login {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.container.active .form-box.register {
+  transform: translateX(-100%);
+  opacity: 1;
+}
+.container.active .toggle-box {
+  background-color: #ccc;
 }

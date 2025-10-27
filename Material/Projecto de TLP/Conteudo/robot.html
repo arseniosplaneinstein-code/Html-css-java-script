@@ -35,17 +35,17 @@
     </ul>
     <button class="login-btn"><i class="fa-solid fa-user-plus"></i> Criar Conta</button>
   </nav>
+
 <div class="robot-gif-container">
   <img src="https://i.pinimg.com/originals/72/3e/0a/723e0a70634bb0b13b46454833a5c14b.gif" alt="Robô Futurista em Movimento" class="robot-gif">
 </div>
-  
+ 
   <!-- HERO -->
   <section class="hero" id="inicio">
     <button onclick="document.getElementById('informar').scrollIntoView({behavior:'smooth'})">
       <i class="fa-solid fa-arrow-down"></i> Explorar
     </button>
   </section>
-  
 
   <!-- INFORMAÇÕES -->
   <div id="informar">
@@ -58,7 +58,8 @@
       </div>
       <div class="info-item">
         <img src="../imagens/The futuristic robot, equipped with a tennis….jpeg" alt="Braço robótico">
-        <h3>Robôs em Ação</h3>
+        <h3>Robôs em 
+          Ação</h3>
         <p>Descobre como os robôs são projetados para executar tarefas com precisão e eficiência — desde a indústria até a medicina avançada.</p>
       </div>
       <div class="info-item">
@@ -87,45 +88,12 @@
     <p>© 2025 Grupo Nº 03 | Página Educativa de Robótica</p>
   </footer>
 
-  <!-- === MODAL DE LOGIN / CADASTRO === -->
-<div id="login-modal" class="modal">
-  <div class="modal-content">
-    <!-- Lado esquerdo com imagem -->
-    <div class="modal-image">
-      <img src="https://i.pinimg.com/originals/72/3e/0a/723e0a70634bb0b13b46454833a5c14b.gif" alt="Robô Futurista">
-    </div>
-
-    <!-- Lado direito com o formulário -->
-    <div class="modal-form">
-      <h2 id="form-title">Criar Conta</h2>
-      <form id="user-form">
-        <div class="input-group">
-          <label for="username">Nome de Usuário</label>
-          <input type="text" id="username" placeholder="Digite seu nome" required>
-        </div>
-        <div class="input-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Digite seu email" required>
-        </div>
-        <div class="input-group">
-          <label for="password">Senha</label>
-          <input type="password" id="password" placeholder="Digite sua senha" required>
-        </div>
-        <div class="input-group">
-          <label for="profile">Foto de Perfil</label>
-          <input type="file" id="profile" accept="image/*">
-        </div>
-        <button type="submit" class="submit-btn">Cadastrar</button>
-      </form>
-
-      <p id="toggle-form">Já tem conta? <span>Acesse aqui</span></p>
-    </div>
-  </div>
-</div>
-
 
   <!-- JS principal -->
 <script src="../interações/robot.js"></script>
+
+  
+
 
 </body>
 </html>

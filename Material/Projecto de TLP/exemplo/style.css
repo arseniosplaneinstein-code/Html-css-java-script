@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #05030f 0%, #0a1633 80%);
+  color: #fff;
+  overflow: hidden;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  position: relative;
+  width: 850px;
+  height: 550px;
+  background: rgba(15, 20, 40, 0.9);
+  border-radius: 25px;
+  box-shadow: 0 0 50px rgba(0, 140, 255, 0.3);
+  margin: 20px;
+  overflow: hidden;
+  transition: 0.6s ease;
+}
+
+/* ===== FORM BOX ===== */
+.form-box {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #e3f2fd;
+  padding: 40px;
+  backdrop-filter: blur(20px);
+  border-left: 1px solid rgba(25, 118, 210, 0.3);
+  transition: 0.8s ease-in-out;
+  z-index: 5; /* ✅ garante que o formulário fique acima do painel animado */
+  pointer-events: all; /* ✅ permite clicar e digitar */
+}
+
+.container.active .form-box {
+  right: 50%;
+}
+
+.form-box.register {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.container.active .form-box.register {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ===== FORM CONTENT ===== */
+form {
+  width: 100%;
+}
+
+.container h1 {
+  font-size: 34px;
+  margin: -10px 0 20px 0;
+  color: #42a5f5;
+  text-shadow: 0 0 25px rgba(66, 165, 245, 0.7);
+  letter-spacing: 1px;
+}
+
+/* ===== INPUTS ===== */
+.input-box {
+  position: relative;
+  margin: 25px 0;
+}
+
+.input-box input {
+  width: 90%;
+  padding: 13px 50px 13px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  border: 1px solid rgba(25, 118, 210, 0.4);
+  outline: none;
+  font-size: 1em;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s ease;
+  z-index: 10;
+}
+
+.input-box input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.input-box input:focus {
+  border-color: #42a5f5;
+  box-shadow: 0 0 18px #1976d2;
+}
+
+.input-box i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #42a5f5;
+}
+
+/* ===== LINKS ===== */
+.forgot-link {
+  margin: -10px 0 10px;
+}
+
+.forgot-link a {
+  font-size: 14.5px;
+  color: #42a5f5;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.forgot-link a:hover {
+  color: #64b5f6;
+}
+
+/* ===== BOTÕES ===== */
+.btn {
+  width: 90%;
+  height: 48px;
+  background: linear-gradient(135deg, #0b2a75, #1565c0, #42a5f5);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 25px rgba(25, 118, 210, 0.8);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px #42a5f5;
+  background: linear-gradient(135deg, #1565c0, #42a5f5, #90caf9);
+}
+
+/* ===== TEXTOS ===== */
+.container p {
+  font-size: 14.5px;
+  margin: 15px 0;
+  color: #bcd9f9;
+}
+
+/* ===== ICONES SOCIAIS ===== */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.social-icons a {
+  display: inline-flex;
+  padding: 10px;
+  border: 1px solid rgba(25, 118, 210, 0.5);
+  border-radius: 10px;
+  font-size: 22px;
+  color: #42a5f5;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: #42a5f5;
+  color: #0b1220;
+  box-shadow: 0 0 20px #42a5f5;
+}
+
+/* ===== TOGGLE BOX ===== */
+.toggle-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none; /* ✅ impede o painel de bloquear os inputs */
+}
+
+.toggle-box::before {
+  content: '';
+  position: absolute;
+  left: -250%;
+  width: 300%;
+  height: 100%;
+  background: linear-gradient(135deg, #05142a, #0d47a1, #1976d2);
+  border-radius: 150px;
+  transition: 1.8s ease-in-out;
+  box-shadow: 0 0 40px #1976d2;
+  z-index: 2;
+}
+
+.container.active .toggle-box::before {
+  left: 50%;
+}
+
+/* Painéis */
+.toggle-panel {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 3;
+  transition: 0.6s ease-in-out;
+  pointer-events: all;
+}
+
+.toggle-panel.toggle-left {
+  left: 0;
+  transition-delay: 1s;
+}
+
+.container.active .toggle-panel.toggle-left {
+  left: -50%;
+  transition-delay: 0.3s;
+}
+
+.toggle-panel.toggle-right {
+  right: -50%;
+  transition-delay: 0.3s;
+}
+
+.container.active .toggle-panel.toggle-right {
+  right: 0;
+  transition-delay: 1s;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media screen and (max-width: 650px) {
+  .container {
+    width: 90%;
+    height: 90vh;
+  }
+
+  .form-box {
+    bottom: 0;
+    width: 100%;
+    height: 70%;
+  }
+
+  .container.active .form-box {
+    right: 0;
+    bottom: 30%;
+  }
+
+  .toggle-box::before {
+    left: 0;
+    top: -270%;
+    width: 100%;
+    height: 300%;
+    border-radius: 25vw;
+  }
+
+  .container.active .toggle-box::before {
+    top: 70%;
+  }
+
+  .toggle-panel {
+    width: 100%;
+    height: 30%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .form-box {
+    padding: 20px;
+  }
+
+  .toggle-panel h1 {
+    font-size: 24px;
+  }
+}
