@@ -12,299 +12,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
 
-    <style>
-      :root {
-        --accent: #42a5f5;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        background: linear-gradient(135deg, #040814, #0d47a1, #1976d2);
-        color: white;
-        min-height: 200vh;
-        overflow-x: hidden;
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-      }
-
-      /* ===== NAVBAR ===== */
-      nav {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 15px 35px;
-        background: rgba(255, 255, 255, 0.06);
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
-        transition: all 0.4s ease;
-      }
-
-      .logo-small {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        justify-content: center;
-        position: fixed;
-        left: 25px;
-        top: 15px;
-        z-index: 1001;
-        pointer-events: none;
-        opacity: 0;
-        transform: translateY(-8px) scale(0.98);
-        transition: opacity 360ms ease, transform 360ms cubic-bezier(0.2, 0.9, 0.2, 1);
-      }
-
-      .logo-small.visible {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-        pointer-events: auto;
-        box-shadow: 0 0 8px var(--accent);
-      }
-
-      .logo-small img {
-        width: 38px;
-        height: 38px;
-        border-radius: 50%;
-      }
-
-      .logo-small span {
-        font-size: 1.05rem;
-        font-weight: 700;
-        text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-      }
-
-      nav ul {
-        display: flex;
-        list-style: none;
-        gap: 26px;
-        margin-left: auto;
-        padding: 0;
-      }
-
-      nav ul li a {
-        text-decoration: none;
-        color: white;
-        font-size: 1.2rem;
-        padding: 10px;
-        border-radius: 12px;
-        transition: 0.3s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-      }
-
-      nav ul li a:hover {
-        color: var(--accent);
-        background: rgba(255, 255, 255, 0.08);
-        box-shadow: 0 0 15px rgba(66, 165, 245, 0.25);
-        transform: translateY(-2px);
-      }
-
-      nav ul li a::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 0;
-        height: 2px;
-        background: var(--accent);
-        transition: 0.3s ease;
-      }
-
-      nav ul li a:hover::after {
-        width: 80%;
-        left: 10%;
-      }
-
-      nav ul li a i {
-        margin-right: 6px;
-        font-size: 1.4rem;
-      }
-
-      .login-btn {
-        background: var(--accent);
-        border: none;
-        padding: 9px 18px;
-        border-radius: 20px;
-        cursor: pointer;
-        transition: transform 0.18s ease, box-shadow 0.18s ease;
-        margin-left: 40px;
-        color: white;
-        font-weight: bold;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 0.95rem;
-      }
-
-      .login-btn:hover {
-        transform: scale(1.06);
-        box-shadow: 0 0 18px rgba(66, 165, 245, 0.18);
-      }
-
-      /* ===== HEADER ===== */
-      header {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 120px 20px 60px;
-        text-align: center;
-        transition: all 0.6s ease;
-      }
-
-      header h1 {
-        font-size: 2.3rem;
-        margin: 10px 0 20px;
-        animation: glow 2s infinite alternate;
-        text-shadow: 0 0 15px #90caf9;
-      }
-
-      header p {
-        font-size: 1.2rem;
-        animation: fadeUp 2s ease forwards;
-      }
-
-      @keyframes glow {
-        from {
-          text-shadow: 0 0 6px #42a5f5;
-        }
-        to {
-          text-shadow: 0 0 15px #90caf9;
-        }
-      }
-
-      @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* ===== TECHBOT ===== */
-      #techbot {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        background: rgba(66, 165, 245, 0.08);
-        border: 2px solid #42a5f5;
-        border-radius: 20px;
-        backdrop-filter: blur(6px);
-        padding: 15px 20px;
-        width: 250px;
-        box-shadow: 0 0 15px #1e88e5;
-        display: none;
-        animation: fadeIn 1s ease forwards;
-        z-index: 9999;
-        text-align: center;
-      }
-
-      #techbot img {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        animation: float 3s ease-in-out infinite;
-        margin-bottom: 10px;
-      }
-
-      #techbot-buttons {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        justify-content: center;
-        margin-top: 5px;
-      }
-
-      #techbot-buttons button {
-        border: none;
-        border-radius: 12px;
-        color: white;
-        padding: 12px 16px;
-        font-size: 0.9rem;
-        cursor: pointer;
-        flex: 1;
-        transition: transform 0.2s, box-shadow 0.2s;
-      }
-
-      .btn-site {
-        background-color: #42a5f5;
-      }
-
-      .btn-robot {
-        background-color: #66bb6a;
-      }
-
-      .btn-off {
-        background-color: #ef5350;
-      }
-
-      #techbot-buttons button:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      }
-
-      #techbot-reactivate {
-        display: none;
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        background-color: #42a5f5;
-        border-radius: 50%;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        box-shadow: 0 0 15px #1e88e5;
-        z-index: 10000;
-        transition: transform 0.3s ease;
-      }
-
-      #techbot-reactivate:hover {
-        transform: scale(1.2);
-        box-shadow: 0 0 20px #1e88e5;
-      }
-
-      #techbot-reactivate i {
-        color: white;
-        font-size: 1.5rem;
-      }
-
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-8px);
-        }
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    </style>
   </head>
 
   <body>
@@ -350,17 +57,30 @@
           </a>
         </li>
       </ul>
-
+  
       <button class="login-btn">
         <i class="fa-solid fa-user-plus"></i> Criar Conta
       </button>
     </nav>
 
     <header>
-      <h1>🤖 A História da Robótica</h1>
-      <p>Da primeira ideia até os robôs inteligentes da atualidade</p>
+      <h1>🤖 APLICAÇÕES ROBOTICA</h1>
+      <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, quae? Vel est sunt, officiis unde enim doloremque expedita fugit dolor! Tempore odit soluta beatae praesentium labore, reprehenderit saepe pariatur veritatis. </p>
     </header>
 
+    <div class="container">
+
+      <div class="card">
+        <div class="imagem">
+            <img src="../imagens/2bd9f13c-5bd4-4221-9cc9-bef04cb6d8b0.jpeg" alt="">
+        </div>
+        <div class="conteudo">
+
+        </div>
+      </div>
+
+    </div>
+  
     <!-- ===== TECHBOT ===== -->
     <div id="techbot">
       <img
@@ -378,7 +98,7 @@
           <i class="fa-solid fa-power-off"></i>
         </button>
       </div>
-    </div>
+    </div>  
 
     <div id="techbot-reactivate">
       <i class="fa-solid fa-robot"></i>
