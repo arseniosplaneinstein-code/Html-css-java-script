@@ -12,7 +12,7 @@
   <!-- NAVBAR -->
   <nav>
     <div class="logo-small" id="logoSmall">
-      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="Logo">
+      <a href="../Conteudo/index.html"><img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="Logo"></a>
       <span>Robótica</span>
     </div>
     <ul>
@@ -22,7 +22,7 @@
       <li><a href="galeria.html"><i class="fa-solid fa-image"></i></a></li>
       <li><a href="contato.html"><i class="fa-solid fa-envelope"></i></a></li>
     </ul>
-    <button class="login-btn"><i class="fa-solid fa-user-plus"></i> Criar Conta</button>
+    <button class="login-btn"  onclick="window.location.href='../login/login.html'"><i class="fa-solid fa-user-plus" ></i> Criar Conta</button>
   </nav>
 
   <!-- CABEÇALHO -->
@@ -109,17 +109,67 @@
   <footer>
     <p>© 2025 Grupo Nº 03 | Página Educativa de Robótica</p>
   </footer>
+<script>
+  (function () {
+    const logo = document.getElementById("logoSmall");
+    const sections = document.querySelectorAll(".informacao");
+    let lastScroll = window.scrollY || 0;
 
-  <script>
-    window.addEventListener("scroll", () => {
-      const nav = document.querySelector("nav");
-      if (window.scrollY > 100) {
-        nav.classList.add("show-logo");
-      } else {
-        nav.classList.remove("show-logo");
+    function handleScroll() {
+      const currentScroll = window.scrollY || 0;
+
+      // ===== Mostrar / esconder logo pequena =====
+      if (logo) {
+        if (currentScroll > 100) {
+          logo.classList.add("visible");
+        } else {
+          logo.classList.remove("visible");
+        }
       }
-    });
-  </script>
+
+      // ===== Expandir / comprimir secções =====
+      sections.forEach((sec) => {
+        const rect = sec.getBoundingClientRect();
+        const visible = rect.top < window.innerHeight - 150 && rect.bottom > 150;
+
+        if (visible) {
+          if (currentScroll > lastScroll) {
+            // Rolando para baixo → expandir / mostrar
+            sec.classList.add("show");
+            sec.classList.remove("hide");
+            // garante que esteja visível caso uses display:none em CSS
+            sec.style.display = sec.style.display || "";
+          } else {
+            // Rolando para cima → comprimir / esconder
+            sec.classList.remove("show");
+            sec.classList.add("hide");
+            // se quiseres remover do fluxo após animação, usa timeout igual ao da animação CSS
+            setTimeout(() => {
+              // só esconde se a classe 'hide' ainda estiver presente
+              if (sec.classList.contains("hide")) {
+                sec.style.display = "none";
+              }
+            }, 650); // ajuste ao tempo da tua animação (600-700ms)
+          }
+        } else {
+          // fora da área de visualização -> limpar classes e deixar as regras CSS controlarem o display
+          sec.classList.remove("show", "hide");
+          sec.style.display = "";
+        }
+      });
+
+      lastScroll = currentScroll <= 0 ? 0 : currentScroll;
+    }
+
+    // inicializa no carregamento (caso já venha com scroll)
+    window.addEventListener("DOMContentLoaded", handleScroll);
+    // listener único de scroll
+    window.addEventListener("scroll", handleScroll);
+    // também atualiza se a janela for redimensionada
+    window.addEventListener("resize", handleScroll);
+  })();
+</script>
+
 
 </body>
 </html>

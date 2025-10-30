@@ -7,7 +7,7 @@
   }
 
   body {
-    background: linear-gradient(135deg, #040814, #0d47a1, #1976d2);
+   background: linear-gradient(135deg, #040814, #0d47a1, #1976d2);
     color: white;
     min-height: 100vh;
     overflow-x: hidden;
@@ -46,104 +46,155 @@
     }
   }
 
-  /* ===== NAVBAR ===== */
-  nav {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 15px 35px;
-    background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
-    transition: all 0.4s ease;
-  }
+/* ===== NAVBAR ===== */
+nav {
+  display: flex; 
+  justify-content: flex-start; 
+  align-items: center;
+  padding: 15px 35px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(12px); 
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.3);
+  transition: all 0.4s ease;
+}
+/* ===== LOGO PEQUENA (CANTO SUPERIOR ESQUERDO) ===== */
+.logo-small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 30px;
 
-  /* ===== LOGO PEQUENA ===== */
-  .logo-small {
-    display: flex;
-    align-items: center;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    position: fixed;
-    left: 25px;
-    top: 15px;
-    animation: floatLogo 5s ease-in-out infinite;
-    z-index: 1001;
-  }
+  /* estado inicial: deslocado para cima e um pouco menor */
+  opacity: 0;
+  transform: translateY(-20px) scale(0.9);
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
 
-  .logo-small img {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    box-shadow: 0 0 8px #42a5f5;
-  }
+  position: fixed;
+  left: 25px;
+  top: 15px;
+  z-index: 1001;
+  animation: floatLogo 5s ease-in-out infinite;
 
-  @keyframes floatLogo {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-4px);
-    }
-  }
+  background: rgba(15, 25, 35, 0.45);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(66, 165, 245, 0.35);
+  box-shadow: 0 0 12px rgba(66, 165, 245, 0.25);
+}
 
-  /* ===== MENU ===== */
-  nav ul {
-    display: flex;
-    list-style: none;
-    gap: 26px;
-    margin-left: auto;
-  }
+/* Quando o logo aparece após rolagem */
+.logo-small.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  box-shadow: 0 0 15px rgba(66, 165, 245, 0.45);
+}
 
-  nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.2rem;
-    padding: 10px;
-    border-radius: 12px;
-    transition: 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
+.logo-small img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #42a5f5;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  nav ul li a:hover {
-    color: #42a5f5;
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 0 15px rgba(66, 165, 245, 0.4);
-    transform: translateY(-2px);
-  }
+.logo-small:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 0 18px #64b5f6;
+}
 
-  .login-btn {
-    background: #42a5f5;
-    border: none;
-    padding: 9px 18px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-left: 40px;
-    color: white;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.95rem;
+/* ✨ Efeito de flutuação suave */
+@keyframes floatLogo {
+  0%, 100% {
+    transform: translateY(0);
   }
+  50% {
+    transform: translateY(-4px);
+  }
+}
 
-  .login-btn:hover {
-    background: #1e88e5;
-    transform: scale(1.08);
-    box-shadow: 0 0 18px #42a5f5;
-  }
+
+/* Texto ao lado do ícone */
+.logo-small span {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #e3f2fd;
+  text-shadow: 0 0 8px rgba(66, 165, 245, 0.4);
+}
+
+
+/* ===== MENU ===== */
+nav ul { 
+  display: flex; 
+  list-style: none; 
+  gap: 26px; 
+  margin-left: auto;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white; 
+  font-size: 1.2rem; 
+  padding: 10px;
+  border-radius: 12px;
+  transition: 0.3s ease;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  position: relative;
+}
+nav ul li a:hover {
+  color: #42a5f5; 
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 15px rgba(66,165,245,0.4);
+  transform: translateY(-2px);
+}
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #42a5f5;
+  transition: 0.3s ease;
+}
+nav ul li a:hover::after {
+  width: 80%;
+  left: 10%;
+}
+nav ul li a i {
+  margin-right: 6px;
+  font-size: 1.6rem;
+}
+
+/* ===== BOTÃO CADASTRAR ===== */
+.login-btn {
+  background: #42a5f5; 
+  border: none; 
+  padding: 9px 18px; 
+  border-radius: 20px;
+  cursor: pointer; 
+  transition: 0.3s; 
+  margin-left: 40px; 
+  color: white; 
+  font-weight: bold;
+  display: flex; 
+  align-items: center; 
+  gap: 8px;
+  font-size: 0.95rem;
+}
+.login-btn:hover { 
+  background: #1e88e5; 
+  transform: scale(1.08);
+  box-shadow: 0 0 18px #42a5f5;
+}
+
 
   /* ===== ANIMAÇÃO DE TEXTO ===== */
   .typewriter {

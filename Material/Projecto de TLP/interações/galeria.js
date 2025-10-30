@@ -75,3 +75,27 @@
           speak("TechBot reativado! Vamos continuar, Arsénio!");
         });
       });
+const cards = document.querySelectorAll('.card');
+
+window.addEventListener('scroll', () => {
+  const windowHeight = window.innerHeight;
+
+  cards.forEach((card) => {
+    const cardTop = card.getBoundingClientRect().top;
+
+    // Quando o card entra na tela
+    if (cardTop < windowHeight - 120 && cardTop > 0) {
+      if (!card.classList.contains('ativo')) {
+        card.classList.remove('saindo');
+        card.classList.add('ativo');
+      }
+    } else {
+      // Quando sai (rolando para cima)
+      if (card.classList.contains('ativo')) {
+        card.classList.remove('ativo');
+        card.classList.add('saindo');
+      }
+    }
+  });
+});
+
