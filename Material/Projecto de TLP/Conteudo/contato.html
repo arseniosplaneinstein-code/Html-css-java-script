@@ -4,8 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../estilos/contacto.css">
 </head>
 <body>
-    
+   
+  <!-- HEADER -->
+  <header id="header">
+    <h1>SOBRE NÓS</h1>
+    <p>Bem-vindo ao mundo da Robótica Futurista!</p>  
+  </header>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo-small" id="logoSmall">
+      <a href="../Conteudo/index.html"><img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="Logo"></a>
+      <span>Robótica</span>
+    </div>
+    <ul>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+      <li><a href="robotica.html"><i class="fa-solid fa-robot"></i></a></li>
+      <li><a href="servicos.html"><i class="fa-solid fa-gear"></i></a></li>
+      <li><a href="galeria.html"><i class="fa-solid fa-image"></i></a></li>
+      <li><a href="contato.html"><i class="fa-solid fa-envelope"></i></a></li>
+    </ul>
+    <button type="button" onclick="window.location.href='../login/login.html'" class="login-btn" ><i class="fa-solid fa-user-plus"></i> Criar Conta</button>
+  </nav>
+
+
+ 
+
+  <div id="techbot">
+  <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="TechBot">
+  <div id="techbot-buttons">
+    <button class="btn-site" onclick="techbotSpeakSite()"><i class="fa-solid fa-globe"></i></button>
+    <button class="btn-robot" onclick="techbotSpeakRobot()"><i class="fa-solid fa-robot"></i></button>
+    <button class="btn-off" onclick="techbotBye()"><i class="fa-solid fa-power-off"></i></button>
+  </div>
+</div>
+
+  <!-- BOTÃO PARA REATIVAR TECHBOT -->
+  <div id="techbot-reactivate">
+    <i class="fa-solid fa-robot"></i>
+  </div>
+<script src="../interações/contacto.js"></script>
 </body>
 </html>

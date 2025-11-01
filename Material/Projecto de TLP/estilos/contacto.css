@@ -1,11 +1,10 @@
-      :root {
-        --accent: #42a5f5;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
       body {
         background: linear-gradient(135deg, #040814, #0d47a1, #1976d2);
         color: white;
@@ -17,6 +16,7 @@
 
       /* ===== NAVBAR ===== */
       nav {
+        height: 80px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -148,7 +148,7 @@
       }
 
       .login-btn {
-        background: var(--accent);
+        background: #1976d2;
         border: none;
         padding: 9px 18px;
         border-radius: 20px;
@@ -165,7 +165,7 @@
 
       .login-btn:hover {
         transform: scale(1.06);
-        box-shadow: 0 0 18px rgba(66, 165, 245, 0.18);
+        box-shadow: 0 0 18px rgba(66, 164, 245, 0.473);
       }
 
       /* ===== HEADER ===== */
@@ -256,7 +256,7 @@
         transition: transform 0.2s, box-shadow 0.2s;
       }
 
-      .btn-site {
+       .btn-site {
         background-color: #42a5f5;
       }
 
@@ -320,228 +320,3 @@
           transform: translateY(0);
         }
       }
-
-      .container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .card{
-        width: 300px;
-        height: 350px;
-      }
-      
-      .container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  padding: 40px;
-}
-
-.card {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-   box-shadow: 0 0 18px rgba(96, 175, 240, 0.705);
-  width: 300px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 25px rgba(66, 165, 245, 0.4);
-}
-
-.card .imagem img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-bottom: 2px solid var(--accent);
-}
-
-.card .conteudo {
-  padding: 15px;
-  text-align: center;
-}
-
-.card .conteudo h2 {
-  font-size: 1.3rem;
-  color: var(--accent);
-  margin-bottom: 10px;
-}
-
-.card .conteudo p {
-  font-size: 0.95rem;
-  color: #e3f2fd;
-}
-
-.btn-detalhes {
-  background: var(--accent);
-  border: none;
-  padding: 8px 16px;
-  border-radius: 12px;
-  color: white;
-  cursor: pointer;
-  font-weight: bold;
-  margin-top: 12px;
-  transition: 0.3s;
-}
-
-.btn-detalhes:hover {
-  background: #64b5f6;
-  transform: scale(1.05);
-}
-
-
-/* ===== ANIMAÇÃO AO ROLAR ===== */
-
-.card {
-  opacity: 0;
-  transform: scale(0.8) rotateY(20deg);
-  transition: all 0.8s ease-out;
-}
-
-.card.ativo {
-  opacity: 1;
-  transform: scale(1) rotateY(0);
-}
-
-body {
-  transition: background 1s ease;
-}
-      body.night-mode {
-        background: linear-gradient(135deg, #0a0a23, #1a237e, #283593);
-      }
-/* ===== HERO VIDEO COM TEXTO BRILHANTE ===== */
-.hero-video {
-  width: 100%;
-  position: relative;
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  overflow: hidden;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 0 18px rgba(96, 175, 240, 0.705);
- 
-
-
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #90caf9;
-  background: #0000008e;
-  border-top: 1px solid #42a5f54d;
-  font-size: 0.9rem;
-  border-top-left-radius: 10px;
-  border-top-right-radius:10px ;
-}
-footer a {
-  font-weight: bold;
-  color: #8bc2ee;
-  text-decoration: none;
-}
-
-
-#bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  filter: brightness(0.4) blur(2px);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  animation: fadeUp 1.5s ease forwards;
-}
-
-.hero-content h1 {
-  font-size: 3.5rem;
-  letter-spacing: 5px;
-  background: linear-gradient(90deg, #42a5f5, #90caf9, #42a5f5);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-transform: uppercase;
-  font-weight: 900;
-  animation: brilhoTexto 3s ease-in-out infinite;
-}
-
-@keyframes brilhoTexto {
-  0%, 100% {
-    text-shadow: 0 0 20px #42a5f5, 0 0 40px #90caf9;
-  }
-  50% {
-    text-shadow: 0 0 60px #64b5f6, 0 0 90px #90caf9;
-  }
-}
-
-.hero-content p {
-  max-width: 750px;
-  margin: 20px auto 0;
-  font-size: 1.2rem;
-  color: #e3f2fd;
-  text-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-
-/*/* ===== ANIMAÇÃO DE EXPANSÃO E COMPRESSÃO ===== */
-.card {
-  opacity: 0;
-  transform: scale(0.8);
-  filter: brightness(0.6) blur(2px);
-  transition: all 0.8s ease;
-}
-
-/* Entrada (expande e brilha) */
-.card.ativo {
-  animation: expandir 0.9s ease forwards;
-}
-
-/* Saída (comprime e some) */
-.card.saindo {
-  animation: comprimir 0.9s ease forwards;
-}
-
-/* ===== KEYFRAMES ===== */
-
-/* Expansão — entra com energia e brilho */
-@keyframes expandir {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-    filter: brightness(0.6) blur(3px);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.1);
-    filter: brightness(1.2);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-    filter: brightness(1);
-  }
-}
-
-/* Compressão — sai suavemente e encolhe */
-@keyframes comprimir {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-    filter: brightness(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.7);
-    filter: brightness(0.6) blur(3px);
-  }
-}
