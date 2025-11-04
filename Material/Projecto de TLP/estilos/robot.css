@@ -9,6 +9,7 @@
 }
 
 body { 
+  scroll-behavior: smooth;
   background: linear-gradient(135deg, #040814, #0d47a1, #1976d2); 
   color: white;
   min-height: 200vh; 
@@ -21,7 +22,7 @@ header {
   flex-direction: column; 
   justify-content: center; 
   align-items: center;
-  padding: 60px 20px; 
+  padding: 80px  20px; 
   text-align: center;
   transition: all 0.6s ease;
 }
@@ -50,6 +51,60 @@ header p {
   from { opacity:0; transform:translateY(20px); }
   to { opacity:1; transform:translateY(0); }
 }
+
+.carousel{
+        margin: 60px auto;
+        padding: 20px;
+        width: 96%;
+        display: flex;
+        overflow-x: auto;
+        gap: 1em;
+        border-radius: 20px;
+      }
+      .carousel::-webkit-scrollbar{
+        display: none;
+      }
+      .group{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1em ;
+        animation: spin 30s infinite linear;
+
+      }
+      .group:hover > :not(:hover){
+        opacity: 6;
+        transform: scale(0.9);
+      }
+      .card{
+        flex: 0 0 5em;
+        height: 5em;
+        padding: 1em;
+        background: #0f192373;
+        font-size: 3em;
+        border-radius: 1.2em;
+        text-align: center;
+        align-content: center;
+        box-shadow: 0 0 10px #acd0ee;
+       
+      }
+        .card:hover{
+        transform: translateY(-5px);
+        transition: 1.2s ease-in;
+        box-shadow: 0 0 25px rgba(66, 164, 245, 0.76);
+        
+      }
+
+      @keyframes spin {
+        from{
+          translate: 0%;
+        }
+        to{
+          translate: -100%;
+        }
+
+        
+      }
 
 /* ===== NAVBAR ===== */
 nav {
@@ -221,7 +276,7 @@ nav ul li a i {
   flex-direction: column;
   justify-content: center; 
   align-items: center;
-  height: 80vh; 
+  height: 40vh; 
   text-align: center; 
   padding: 20px;
 }
@@ -288,8 +343,9 @@ nav ul li a i {
   box-shadow: 0 0 15px rgba(66, 165, 245, 0.25);
 }
 .info-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 25px rgba(66, 165, 245, 0.45);
+  transform: translateY(-5px);
+  transition: 1.2s ease-in;
+  box-shadow: 0 0 25px rgba(66, 164, 245, 0.76);
   background: rgba(255, 255, 255, 0.15);
 }
 .info-item img {

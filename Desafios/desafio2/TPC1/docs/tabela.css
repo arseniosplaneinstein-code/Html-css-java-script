@@ -11,6 +11,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   padding: 20px;
+  height: 9vh;
 }
 
 main {
@@ -20,15 +21,33 @@ main {
   max-width: 900px;
   padding: 20px 20px;
   border-radius: 10px;
+  text-align: center;
+}
+main h1 {
+  display: inline-block; /* necessário pro width funcionar */
+  white-space: nowrap; /* evita quebra de linha */
+  overflow: hidden; /* esconde o que ainda não foi "digitado" */
+  border-right: 2px solid black; /* cursor piscando */
+  font-size: 28px;
+  color: black;
+  text-shadow: 1px 2px 7px #00000062;
+  animation: digita 3s steps(23, end), blink 0.6s step-end infinite alternate;
 }
 
-main h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 28px;
-  color:black ;
-   text-shadow: 1px 2px 7px  #00000062;
-   animation: glow 2s infinite alternate;
+/* Animação de digitar letra por letra */
+@keyframes digita {
+  from {
+    width: 0ch; /* começa sem letras */
+  }
+  to {
+    width: 23ch; /* 1ch ≈ largura de 1 caractere, ajusta conforme teu texto */
+  }
+}
+
+
+@keyframes blink {
+  from { border-color: transparent; }
+  to { border-color: black; }
 }
 
 .form-row {
@@ -90,24 +109,44 @@ main h1 {
 }
 
 /* Botões principais */
-main > button {
+main  button {
   padding: 10px 20px;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: bold;
   border-radius: 6px;
   border: none;
   cursor: pointer;
-  margin: 10px auto;
+  margin: 6px 10px;
  display:flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
   transition: 0.3s;
   color: white;
+  box-shadow: 0 1px 10px #2928289d;
+  animation: float 3s ease-in-out infinite;
   
 }
 
-main > button i {
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-1px); /* sobe */
+  }
+  100% {
+    transform: translateY(0px); /* desce de novo */
+  }
+}
+
+.cont-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main  button i {
   font-size: 16px;
 }
 
@@ -118,6 +157,7 @@ main > button i {
 .btn_adicionar:hover {
   background: #0056b3;
   transform: scale(1.05);
+  transition: .6s ease;
 }
 
 .btn_calcular {
@@ -134,10 +174,12 @@ main > button i {
 .btn_limpar:hover {
   background: #a71d2a;
   transform: scale(1.05);
+  transition: .4s ease in;
 }
 
 .btn_irt {
   background: #6f42c1;
+
 }
 .btn_irt:hover {
   background: #5936a2;
@@ -158,6 +200,7 @@ th, td {
 }
 
 th {
+  
   background: #007BFF;
   color: #fff;
   font-weight: bold;
