@@ -65,6 +65,9 @@ header p {
         display: none;
       }
       .group{
+         background: rgba(255, 255, 255, 0.05);
+         padding: 20px;
+         border-radius: 30px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -80,7 +83,11 @@ header p {
         flex: 0 0 5em;
         height: 5em;
         padding: 1em;
-        background: #0f192373;
+      background-color: rgba(3, 23, 88, 0.726);
+  background-blend-mode: overlay;
+  background-size: 70% auto;      /* imagem redimensionada */
+  background-position: center;    /* imagem centralizada */
+  background-repeat: no-repeat;
         font-size: 3em;
         border-radius: 1.2em;
         text-align: center;
@@ -481,124 +488,9 @@ footer a {
   text-decoration: none;
 }
 
-/* ===== MODAL LOGIN ===== */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(8px);
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-}
 
-.modal-content {
-  display: flex;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 0 25px rgba(66, 165, 245, 0.4);
-  max-width: 900px;
-  width: 90%;
-  animation: showUp 0.6s ease;
-}
 
-@keyframes showUp {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
 
-/* Lado da imagem */
-.modal-image {
-  flex: 1;
-  background: linear-gradient(135deg, #0d47a1, #1976d2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.modal-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Lado do formulário */
-.modal-form {
-  flex: 1.2;
-  padding: 40px;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.modal-form h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #42a5f5;
-  text-shadow: 0 0 10px #42a5f5;
-}
-
-.input-group {
-  margin-bottom: 15px;
-  display: flex;
-  flex-direction: column;
-}
-
-.input-group label {
-  font-size: 0.9rem;
-  margin-bottom: 6px;
-  color: #bbdefb;
-}
-
-.input-group input {
-  padding: 10px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  background: rgba(255, 255, 255, 0.15);
-  color: white;
-  transition: 0.3s;
-}
-
-.input-group input:focus {
-  box-shadow: 0 0 10px #42a5f5;
-}
-
-.submit-btn {
-  background: #42a5f5;
-  color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-  margin-top: 10px;
-}
-
-.submit-btn:hover {
-  background: #1e88e5;
-  box-shadow: 0 0 15px #42a5f5;
-}
-
-/* Texto alternar login/cadastro */
-#toggle-form {
-  text-align: center;
-  margin-top: 15px;
-  color: #bbdefb;
-  font-size: 0.9rem;
-}
-#toggle-form span {
-  color: #42a5f5;
-  cursor: pointer;
-  font-weight: bold;
-}
-#toggle-form span:hover {
-  text-decoration: underline;
-}
 
 /* Responsivo */
 @media (max-width: 768px) {
@@ -634,74 +526,4 @@ footer a {
   .logo-small img { width: 32px; height: 32px; }
   #techbot { width: 220px; padding: 10px 15px; }
   #techbot img { width: 50px; height: 50px; }
-}
-/* Modal geral */
-
-.modal {
-  display: none;
-  position: fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background-color: rgba(0,0,0,0.7);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-.modal.show {
-  display: flex;
-}
-
-
-/* Container de login/cadastro */
-.container {
-  background-color: #fff;
-  width: 90%;
-  max-width: 900px;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-  z-index: 1001; /* sempre acima do fundo fosco */
-}
-
-/* Form boxes */
-.form-box {
-  padding: 2rem;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-.form-box.register {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  opacity: 0;
-}
-
-/* Toggle panel */
-.toggle-box {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-  background-color: #eee;
-}
-
-.toggle-box button {
-  cursor: pointer;
-}
-
-/* Classes para alternar visibilidade */
-.container.active .form-box.login {
-  transform: translateX(-100%);
-  opacity: 0;
-}
-
-.container.active .form-box.register {
-  transform: translateX(-100%);
-  opacity: 1;
-}
-.container.active .toggle-box {
-  background-color: #ccc;
 }

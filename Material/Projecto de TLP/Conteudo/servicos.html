@@ -1,113 +1,110 @@
-    <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serviços | Workshop Futurist</title>
+  <!DOCTYPE html>
+  <html lang="pt-BR">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serviços | Workshop Futurist</title>
+  <link rel="stylesheet" href="../estilos/servicos.css">
 
-    <!-- ÍCONES E FONTES -->
-<link rel="shortcut icon" href="imagens/icone.ico" type="image/x-icon" />
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" type="image/x-icon"/>
+</head>
+  <body>
 
-<link rel="stylesheet" href="../estilos/servicos.css">
+  <nav>
+   <div class="logo-small" id="logoSmall">
+  <a href="../Conteudo/index.html">
+    <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" width="40">
+  </a>
+  <span>Futurist</span>
+</div>
 
-    </head>
-    <body>
+    <ul>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+      <li><a href="robotica.html"><i class="fa-solid fa-robot"></i></a></li>
+      <li><a href="servicos.html"><i class="fa-solid fa-gear"></i></a></li>
+      <li><a href="galeria.html"><i class="fa-solid fa-image"></i></a></li>
+      <li><a href="contato.html"><i class="fa-solid fa-envelope"></i></a></li>
+    </ul>
+    <button class="login-btn" onclick="window.location.href='../login/login.html'">Criar Conta</button>
+  </nav>
 
-     <!-- ===== ÁUDIO DO TECHBOT ===== -->
-    <audio
-      id="techbot-sound"
-      src="https://www.soundjay.com/button/sounds/button-16.mp3"
-      preload="auto"
-    ></audio>
+  <header>
+    <h1>Workshop FUTURIST</h1>
+    <div class="typewriter">O futuro da robótica ao seu alcance 🤖</div>
+  </header>
 
-   <!-- MENU -->
-<nav>
-  <div class="logo-small" id="logoSmall" aria-hidden="true">
-    <a href="../Conteudo/index.html">
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png"
-        alt="Logo Robótica"
-      />
-    </a>
-    <span>Robótica</span>
+  <!-- AVISO ANIMADO -->
+  <div id="login-warning">
+    <h2 class="warning-text">🔒 Área exclusiva para membros</h2>
+    <p class="warning-text">Crie uma conta para acessar:</p>
+    <div class="info-sequence">
+      <p>🎮 Um Quiz divertido sobre robótica e inteligência artificial...</p>
+      <p>🛠️ Um Workshop Online onde você pode explorar e comprar produtos...</p>
+      <p>🎓 E aprender de forma interativa com especialistas!</p>
+    </div>
+    <button onclick="window.location.href='../login/login.html'">Criar Conta / Entrar</button>
   </div>
 
-  <ul>
-    <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
-    <li><a href="robotica.html"><i class="fa-solid fa-robot"></i></a></li>
-    <li><a href="servicos.html"><i class="fa-solid fa-gear"></i></a></li>
-    <li><a href="galeria.html"><i class="fa-solid fa-image"></i></a></li>
-    <li><a href="contato.html"><i class="fa-solid fa-envelope"></i></a></li>
-  </ul>
+  <!-- CONTEÚDO PARA LOGADOS -->
+  <section id="servicos-area">
+    <h2>Serviços Interativos</h2>
 
-  <button class="login-btn" id="loginBtnMenu"  onclick="window.location.href='../login/login.html'">
-    <i class="fa-solid fa-user-plus" ></i> Criar Conta
-  </button>
-</nav>
+    <div class="servico-card">
+      <i class="fa-solid fa-question"></i>
+      <h3>Quiz de Robótica</h3>
+      <p>Teste seus conhecimentos e divirta-se!</p>
+      <button onclick="iniciarQuiz()">Jogar Agora</button>
+    </div>
 
-<!-- CABEÇALHO -->
-<header>
-  <h1>Workshop FUTURIST</h1>
-  <div class="typewriter">Bem-vindo ao nosso Workshop Futurist</div>
-</header>
+    <div class="servico-card">
+      <i class="fa-solid fa-laptop-code"></i>
+      <h3>Workshop Online</h3>
+      <p>Compre kits e participe de workshops ao vivo!</p>
+      <button onclick="abrirWorkshop()">Ver Produtos</button>
+    </div>
+  </section>
 
-<!-- LOGIN -->
-<section id="login-area">
-  <div class="login-box" id="loginBox">
-    <h2>Criar Conta</h2>
-    <input type="text" id="username" placeholder="Nome de usuário" />
-    <input type="email" id="email" placeholder="Email" />
-    <input type="password" id="password" placeholder="Senha" />
-    <button id="registerBtn">Cadastrar</button>
-    <p>Já tem conta? <span id="toggleLogin">Entrar aqui</span></p>
+  <!-- QUIZ MODAL -->
+  <div id="quizModal" class="modal">
+    <div class="modal-content">
+      <h3 id="pergunta"></h3>
+      <div id="opcoes"></div>
+      <button id="proximo" style="display:none;">Próxima</button>
+    </div>
   </div>
-</section>
-
-<!-- SERVIÇOS -->
-<section id="servicos-area">
-  <h2>Serviços e Produtos</h2>
-  <div class="servico-card">
-    <i class="fa-solid fa-microchip"></i>
-    <h3>Kits de Robótica</h3>
-    <p>Monte e programe seu próprio robô com nossos kits educativos.</p>
+  
+  <div id="techbot">
+  <div id="techbot-face">
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png"
+      alt="TechBot"
+    />
   </div>
-  <div class="servico-card">
-    <i class="fa-solid fa-laptop-code"></i>
-    <h3>Workshops Online</h3>
-    <p>Aprenda robótica e IA com instrutores experientes ao vivo.</p>
-  </div>
-  <div class="servico-card">
-    <i class="fa-solid fa-gears"></i>
-    <h3>Peças e Componentes</h3>
-    <p>Encontre motores, sensores e microcontroladores de qualidade.</p>
-  </div>
-</section>
-
-<!-- TECHBOT -->
-<div id="techbot">
-  <img
-    src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png"
-    alt="TechBot"
-  />
-  <div class="techbot-message" id="techbotMessage">
-    Olá! Eu sou o TechBot 🤖
+  <div id="techbot-buttons">
+    <button class="btn-site" onclick="techbotSpeakSite()">
+      <i class="fa-solid fa-globe"></i>
+    </button>
+    <button class="btn-robot" onclick="techbotSpeakRobot()">
+      <i class="fa-solid fa-robot"></i>
+    </button>
+    <button class="btn-off" onclick="techbotBye()">
+      <i class="fa-solid fa-power-off"></i>
+    </button>
   </div>
 </div>
 
-<div id="techbot-buttons">
-  <button onclick="techbotSpeakSite()">Sobre o Site</button>
-  <button onclick="techbotSpeakRobot()">Sobre Robôs</button>
-  <button onclick="techbotBye()">Desligar</button>
+<div id="techbot-reactivate">
+  <i class="fa-solid fa-robot"></i>
 </div>
 
-<footer>
-  <p>© 2025 Workshop Futurist | Robótica e Inovação</p>
-</footer>
+<audio id="techbot-sound" src="../sounds/techbot-sound.mp3"></audio>
 
-<script src="../Conteudo/servicos.js"></script>
-    </body>
-    </html>
+
+  <footer>
+    <p>© 2025 Workshop Futurist | Robótica e Inovação</p>
+  </footer>
+  <script src="../interações/servicos.js"></script>
+  
+  </body>
+  </html>

@@ -61,6 +61,267 @@ nav {
   box-shadow: 0 4px 25px rgba(0,0,0,0.3);
   transition: all 0.4s ease;
 }
+header {
+    text-align:center;
+    padding:60px 20px;
+  }
+  header h1 {
+    font-size:2.5em;
+    margin-bottom:10px;
+  }
+  .typewriter {
+    color:#90caf9;
+    font-size:1.2em;
+    overflow:hidden;
+    border-right:3px solid #90caf9;
+    white-space:nowrap;
+    animation: typing 3s steps(30,end), blink .8s infinite;
+  }
+  @keyframes typing {from{width:0} to{width:100%}}
+  @keyframes blink {50%{border-color:transparent}}
+
+  /* ===== TECHBOT ===== */
+#techbot {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #0f2c54; /* fundo azul escuro */
+  border: 2px solid #42a5f5; /* contorno azul neon */
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  padding: 15px 20px;
+  width: 250px;
+  box-shadow: 0 0 15px #1e88e5; /* glow azul */
+  display: none;
+  animation: fadeIn 1s ease forwards;
+  z-index: 9999;
+  text-align: center;
+}
+
+#techbot img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  animation: float 3s ease-in-out infinite;
+  margin-bottom: 10px;
+}
+
+#techbot-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+#techbot-buttons button {
+  border: none;
+  border-radius: 12px;
+  color: white;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  flex: 1;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-site {
+  background-color: #42a5f5; /* azul */
+}
+
+.btn-robot {
+  background-color: #66bb6a; /* verde */
+}
+
+.btn-off {
+  background-color: #ef5350; /* vermelho */
+}
+
+#techbot-buttons button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#techbot-reactivate {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #42a5f5;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 15px #1e88e5;
+  z-index: 10000;
+  transition: transform 0.3s ease;
+}
+
+#techbot-reactivate:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 20px #1e88e5;
+}
+
+#techbot-reactivate i {
+  color: white;
+  font-size: 1.5rem;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+  /* ===== AVISO ANIMADO ===== */
+  #login-warning {
+    text-align:center;
+    margin:80px auto;
+    width:85%;
+    background:rgba(255,255,255,0.08);
+    border-radius:20px;
+    padding:50px;
+    box-shadow:0 0 30px rgba(66,165,245,0.3);
+    overflow:hidden;
+    position:relative;
+  }
+  #login-warning::before {
+    content:'';
+    position:absolute;
+    top:0; left:-100%;
+    width:100%; height:100%;
+    background:linear-gradient(120deg,transparent,rgba(66,165,245,0.3),transparent);
+    animation:shine 3s infinite linear;
+  }
+  @keyframes shine {
+    0% {left:-100%;}
+    50% {left:100%;}
+    100% {left:100%;}
+  }
+  .warning-text {
+    animation:fadeInUp 2s ease;
+  }
+  @keyframes fadeInUp {
+    from {opacity:0; transform:translateY(30px);}
+    to {opacity:1; transform:translateY(0);}
+  }
+  .info-sequence {
+    margin-top:30px;
+    font-size:1.1em;
+    color:#bbdefb;
+    animation:slideIn 6s infinite;
+  }
+  @keyframes slideIn {
+    0%, 100% {opacity:0;}
+    20%, 80% {opacity:1;}
+  }
+  #login-warning button {
+    margin-top:30px;
+    padding:12px 25px;
+    border:none;
+    border-radius:10px;
+    background:#42a5f5;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+  }
+  #login-warning button:hover {background:#1e88e5;}
+
+  /* ===== SERVIÇOS ===== */
+  #servicos-area {
+    display:none;
+    text-align:center;
+    padding:50px 20px;
+  }
+  .servico-card {
+    background:rgba(255,255,255,0.1);
+    border-radius:15px;
+    padding:30px;
+    display:inline-block;
+    width:280px;
+    margin:20px;
+    box-shadow:0 0 25px rgba(66,165,245,0.25);
+    transition:0.3s;
+  }
+  .servico-card:hover {
+    transform:translateY(-5px);
+    background:rgba(255,255,255,0.2);
+  }
+  .servico-card i {
+    font-size:2em;
+    color:#90caf9;
+    margin-bottom:10px;
+  }
+  .servico-card button {
+    margin-top:10px;
+    background:#42a5f5;
+    border:none;
+    color:white;
+    border-radius:8px;
+    padding:10px 20px;
+    cursor:pointer;
+    transition:0.3s;
+  }
+  .servico-card button:hover {background:#1e88e5;}
+
+  /* ===== QUIZ MODAL ===== */
+  .modal {
+    display:none;
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background:rgba(0,0,0,0.7);
+    justify-content:center;
+    align-items:center;
+  }
+  .modal-content {
+    background:rgba(255,255,255,0.1);
+    padding:40px;
+    border-radius:20px;
+    width:90%;
+    max-width:500px;
+    text-align:center;
+    box-shadow:0 0 30px rgba(66,165,245,0.4);
+  }
+  .quiz-option {
+    background:rgba(255,255,255,0.1);
+    border:none;
+    color:white;
+    padding:10px;
+    border-radius:10px;
+    margin:8px;
+    width:100%;
+    cursor:pointer;
+    transition:0.3s;
+  }
+  .quiz-option:hover {background:#42a5f5;}
+  #proximo {margin-top:15px;}
+
+  /* ===== FOOTER ===== */
+  footer {
+    text-align:center;
+    margin-top:50px;
+    padding:20px;
+    font-size:0.9em;
+    color:#bbdefb;
+  }
 /* ===== LOGO PEQUENA (CANTO SUPERIOR ESQUERDO) ===== */
 .logo-small {
   display: flex;
@@ -171,6 +432,53 @@ nav ul li a:hover::after {
 nav ul li a i {
   margin-right: 6px;
   font-size: 1.6rem;
+}
+
+/* ===== PERFIL DO USUÁRIO ===== */
+#user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Sombra suave e leve elevação */
+#user-profile:hover {
+  background: rgba(66, 165, 245, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(66, 165, 245, 0.4);
+}
+
+/* Imagem do usuário */
+#user-profile img {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito hover na imagem */
+#user-profile img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 11px #4999db7e;
+}
+
+/* Nome do usuário */
+#user-profile span {
+  color: #ffffff;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+/* Efeito hover no nome */
+#user-profile:hover span {
+  color: #42a5f5;
+  text-shadow: 0 0 8px rgba(66, 165, 245, 0.7);
 }
 
 /* ===== BOTÃO CADASTRAR ===== */

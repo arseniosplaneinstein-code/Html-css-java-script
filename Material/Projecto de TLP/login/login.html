@@ -1,83 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Workshop Futurist</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body>
-   <div class="container">
-    <div class="form-box    ">
-        <form action="">
-            <h1>Entrar</h1>
-            <div class="input-box">
-                <input type="text" placeholder="Nome do Usuário" required>
-                <i class='bx bxs-user'></i>
-            </div>
-             <div class="input-box">
-                <input type="password" placeholder="Senha   " required>
-                <i class='bx bxs-lock-alt'></i>
-            </div>
-            <div class="forgot-link">
-                <a href="#">Esqueceu a senha</a>
-            </div> 
-            <button type="submit" class="btn">Entrar</button>
-            <p>Our login with social platforms</p>
-            <div class="social-icons">
-                <a href="#"><i class="bx bxl-google"></i></a>
-                <a href="#"><i class="bx bxl-facebook"></i></a>
-                <a href="#"><i class="bx bxl-github"></i></a>
-                <a href="#"><i class="bx bxl-linkedin"></i></a> 
-            </div>
-        </form>
+  <div class="container">
+    <!-- LOGIN -->
+    <div class="form-box login">
+      <form id="loginForm">
+        <h1>Entrar</h1>
+        <div class="input-box">
+          <input type="text" id="loginUser" placeholder="Nome do Usuário" required>
+          <i class='bx bxs-user'></i>
+        </div>
+        <div class="input-box">
+          <input type="password" id="loginPass" placeholder="Senha" required>
+          <i class='bx bxs-lock-alt'></i>
+        </div>
+        <div class="forgot-link">
+          <a href="#">Esqueceu a senha?</a>
+        </div>
+        <button type="submit" class="btn">Entrar</button>
+      </form>
     </div>
 
-        <div class="form-box register">
-        <form action="">
-            <h1>Registro </h1>
-            <div class="input-box">
-                <input type="text" placeholder="Nome do Usuário" required>
-                <i class='bx bxs-user'></i>
-            </div>
-
-            <div class="input-box">
-                <input type="email
-                " placeholder="Email" required>
-                <i class='bx bxs -envelope'></i>
-            </div>
-
-             <div class="input-box">
-                <input type="password" placeholder="Senha" required>
-                <i class='bx bxs-lock-alt'></i>
-            </div>
-           
-            <button type="submit" class="btn">Registro</button>
-            <p>Our register with social platforms</p>
-            <div class="social-icons">
-                <a href="#"><i class="bx bxl-google"></i></a>
-                <a href="#"><i class="bx bxl-facebook"></i></a>
-                <a href="#"><i class="bx bxl-github"></i></a>
-                <a href="#"><i class="bx bxl-linkedin"></i></a> 
-            </div>
-        </form>
+    <!-- REGISTRO -->
+    <div class="form-box register">
+      <form id="registerForm">
+        <h1>Registro</h1>
+        <div class="input-box">
+          <input type="text" id="regUser" placeholder="Nome do Usuário" required>
+          <i class='bx bxs-user'></i>
+        </div>
+        <div class="input-box">
+          <input type="email" id="regEmail" placeholder="Email" required>
+          <i class='bx bxs-envelope'></i>
+        </div>
+        <div class="input-box">
+          <input type="password" id="regPass" placeholder="Senha" required>
+          <i class='bx bxs-lock-alt'></i>
+        </div>
+        <button type="submit" class="btn">Registrar</button>
+      </form>
     </div>
 
+    <!-- TOGGLE PANEL -->
     <div class="toggle-box">
       <div class="toggle-panel toggle-left">
-        <h1>OLá,Bem-vindo! </h1>
-        <p>Não tens uma conta</p>
+        <h1>Olá, Bem-vindo!</h1>
+        <p>Não tens uma conta?</p>
         <button class="btn register-btn">Registro</button>
-      </div>  
-      
+      </div>
       <div class="toggle-panel toggle-right">
-        <h1>Bem-Vindo De Volta! </h1>
-        <p>already have an acount</p>
+        <h1>Bem-vindo de volta!</h1>
+        <p>Já tens uma conta?</p>
         <button class="btn login-btn">Entrar</button>
-      </div>   
+      </div>
     </div>
-   </div> 
-   <script src="login.js"></script>
+  </div>
+
+  <script src="login.js"></script>
 </body>
 </html>

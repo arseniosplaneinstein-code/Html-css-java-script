@@ -98,4 +98,37 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+ 
+const verMaisBtns = document.querySelectorAll('.btn-detalhes');
+const fecharBtns = document.querySelectorAll('.btn-fechar');
 
+verMaisBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const card = btn.closest('.card');
+    const detalhes = card.querySelector('.detalhes-card');
+    detalhes.classList.add('ativo'); // mostra a div
+  });
+});
+
+fecharBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const detalhes = btn.closest('.detalhes-card');
+    detalhes.classList.remove('ativo'); // esconde a div
+  });
+});
+const btnsDetalhes = document.querySelectorAll('.btn-detalhes');
+btnsDetalhes.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const card = btn.closest('.card');
+    const detalhes = card.querySelector('.detalhes-card');
+    detalhes.classList.add('ativo'); // abre
+  });
+});
+
+const btnsFechar = document.querySelectorAll('.btn-fechar');
+btnsFechar.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const detalhes = btn.closest('.detalhes-card');
+    detalhes.classList.remove('ativo'); // fecha
+  });
+});
