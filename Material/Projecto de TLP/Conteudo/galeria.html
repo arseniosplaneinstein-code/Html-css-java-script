@@ -21,50 +21,40 @@
       src="https://www.soundjay.com/button/sounds/button-16.mp3"
       preload="auto"
     ></audio>
+<nav>
+  <!-- LOGO -->
+  <div class="logo-small" id="logoSmall">
+    <a href="../Conteudo/index.html">
+      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="Logo">
+    </a>
+    <span>Robótica</span>
+  </div>
 
-    <nav>
-      <div class="logo-small" id="logoSmall" aria-hidden="true">
-        <a href="../Conteudo/index.html">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png"
-            alt="Logo Robótica"
-          />
-        </a>
-        <span>Robótica</span>
-      </div>
+  <!-- MENU PRINCIPAL -->
+<ul id="navMenu">
+  <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+  <li><a href="robotica.html"><i class="fa-solid fa-robot"></i></a></li>
+  <li class="service">
+    <a href="servicos.html"><i class="fa-solid fa-gear"></i></a>
+    <ul class="dropdown"> 
+      <li><a href="">Quiz</a></li>
+      <li><a href="">Work Shop</a></li>
+    </ul>
+    
+  </li>
+  <li><a href="galeria.html"><i class="fa-solid fa-image"></i></a></li>
+  <li><a href="contato.html"><i class="fa-solid fa-envelope"></i></a></li>
+  <li>
+    <a href="../login/login.html" class="login-btn"><i class="fa-solid fa-user-plus" onclick="window.location.href='../login/login.html'"></i> Criar Conta</a>
+  </li>
+</ul>
 
-      <ul>
-        <li>
-          <a href="index.html" title="Início">
-            <i class="fa-solid fa-house"></i>
-          </a>
-        </li>
-        <li>
-          <a href="robotica.html" title="Robótica">
-            <i class="fa-solid fa-robot"></i>
-          </a>
-        </li>
-        <li>
-          <a href="servicos.html" title="Serviços">
-            <i class="fa-solid fa-gear"></i>
-          </a>
-        </li>
-        <li>
-          <a href="galeria.html" title="Galeria">
-            <i class="fa-solid fa-image"></i>
-          </a>
-        </li>
-        <li>
-          <a href="contato.html" title="Contato">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-        </li>
-      </ul>
-  
-      <button class="login-btn"  onclick="window.location.href='../login/login.html'">
-        <i class="fa-solid fa-user-plus" ></i> Criar Conta
-      </button>
-    </nav>
+<!-- BOTÃO HAMBURGER -->
+<div class="menu-toggle" id="menuToggle">
+  <i class="fa-solid fa-bars"></i>
+</div>
+</nav>
+
 
     <header>
      <!-- ===== SEÇÃO DE TÍTULO COM VÍDEO ===== -->

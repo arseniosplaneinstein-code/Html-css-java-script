@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     speak("Olá! Eu sou o TechBot, o guia digital da Robótica Futurista. Quer ouvir sobre o site ou sobre robôs?");
   }, 3000);
 
-  // === Função de voz (fala do TechBot) ===
+  // === Função de voz ===
   function speak(text) {
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = "pt-PT";
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     techbotSound.play();
   }
 
-  // === Clique no TechBot (mostrar ou esconder botões) ===
+  // === Clique no TechBot ===
   techbot.addEventListener('click', (e) => {
     if (e.target.tagName !== 'BUTTON') {
       buttonsContainer.style.display = 
@@ -102,64 +102,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-});
- // === LOGIN MODAL ===
-const loginBtn = document.querySelector('.login-btn');
-const loginModal = document.getElementById('login-modal');
-const toggleForm = document.getElementById('toggle-form');
-const formTitle = document.getElementById('form-title');
-const userForm = document.getElementById('user-form');
+  // === MENU HAMBURGUER ===
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
 
-let isLoginMode = false;
-
-// Mostrar modal
-loginBtn.addEventListener('click', () => {
-  loginModal.style.display = 'flex';
-});
-
-// Fechar modal ao clicar fora
-loginModal.addEventListener('click', (e) => {
-  if (e.target === loginModal) loginModal.style.display = 'none';
-});
-
-// Alternar entre login e cadastro
-toggleForm.addEventListener('click', () => {
-  isLoginMode = !isLoginMode;
-  if (isLoginMode) {
-    formTitle.textContent = 'Entrar';
-    userForm.innerHTML = `
-      <div class="input-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Digite seu email" required>
-      </div>
-      <div class="input-group">
-        <label for="password">Senha</label>
-        <input type="password" id="password" placeholder="Digite sua senha" required>
-      </div>
-      <button type="submit" class="submit-btn">Entrar</button>
-    `;
-    toggleForm.innerHTML = `Ainda não tem conta? <span>Cadastre-se</span>`;
-  } else {
-    formTitle.textContent = 'Criar Conta';
-    userForm.innerHTML = `
-      <div class="input-group">
-        <label for="username">Nome de Usuário</label>
-        <input type="text" id="username" placeholder="Digite seu nome" required>
-      </div>
-      <div class="input-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Digite seu email" required>
-      </div>
-      <div class="input-group">
-        <label for="password">Senha</label>
-        <input type="password" id="password" placeholder="Digite sua senha" required>
-      </div>
-      <div class="input-group">
-        <label for="profile">Foto de Perfil</label>
-        <input type="file" id="profile" accept="image/*">
-      </div>
-      <button type="submit" class="submit-btn">Cadastrar</button>
-    `;
-    toggleForm.innerHTML = `Já tem conta? <span>Acesse aqui</span>`;
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
   }
+
 });

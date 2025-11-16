@@ -20,22 +20,40 @@
     <h1>SOBRE NÓS</h1>
     <p>Bem-vindo ao mundo da Robótica Futurista!</p>  
   </header>
+<!-- NAVBAR -->
+<nav>
+  <div class="logo-small" id="logoSmall">
+    <a href="../Conteudo/index.html"><img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="Logo"></a>
+    <span>Robótica</span>
+  </div>
 
-  <!-- NAVBAR -->
-  <nav>
-    <div class="logo-small" id="logoSmall">
-      <a href="../Conteudo/index.html"><img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="Logo"></a>
-      <span>Robótica</span>
-    </div>
-    <ul>
-      <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
-      <li><a href="robotica.html"><i class="fa-solid fa-robot"></i></a></li>
-      <li><a href="servicos.html"><i class="fa-solid fa-gear"></i></a></li>
-      <li><a href="galeria.html"><i class="fa-solid fa-image"></i></a></li>
-      <li><a href="contato.html"><i class="fa-solid fa-envelope"></i></a></li>
-    </ul>
-    <button type="button" onclick="window.location.href='../login/login.html'" class="login-btn" ><i class="fa-solid fa-user-plus"></i> Criar Conta</button>
-  </nav>
+  <!-- Botão menu burger -->
+  <div class="menu-toggle" id="menuToggle">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+
+  <ul id="navMenu">
+    <li><a href="index.html"><i class="fa-solid fa-house"></i> </a></li>
+    <li><a href="robotica.html"><i class="fa-solid fa-robot"></i> </a></li>
+    <li class="service">
+      <a href="servicos.html"><i class="fa-solid fa-gear"></i> </a>
+      <ul class="dropdown">
+        <li><a href="#">Quiz</a></li>
+        <li><a href="#">WorkShop</a></li>
+       
+      </ul>
+    </li>
+    <li><a href="galeria.html"><i class="fa-solid fa-image"></i> </a></li>
+    <li><a href="contato.html"><i class="fa-solid fa-envelope"></i></a></li>
+    <li>
+      <button type="button" onclick="window.location.href='../login/login.html'" class="login-btn">
+        <i class="fa-solid fa-user-plus"></i> Criar Conta
+      </button>
+    </li>
+  </ul>
+</nav>
+
+
 <div class="center">
   <div class="carousel">
     <button class="nav-btn left-btn" onclick="moveLeft()">&#10094;</button>

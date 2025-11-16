@@ -52,7 +52,6 @@ header p {
   from { opacity:0; transform:translateY(20px); }
   to { opacity:1; transform:translateY(0); }
 }
-
 /* ===== NAVBAR ===== */
 nav {
   display: flex; 
@@ -68,7 +67,6 @@ nav {
   box-shadow: 0 4px 25px rgba(0,0,0,0.3);
   transition: all 0.4s ease;
 }
-
 /* ===== LOGO PEQUENA (CANTO SUPERIOR ESQUERDO) ===== */
 .logo-small {
   display: flex;
@@ -132,15 +130,28 @@ nav {
   color: #e3f2fd;
   text-shadow: 0 0 8px rgba(66, 165, 245, 0.4);
 }
-
-
 /* ===== MENU ===== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: fixed;
+  z-index: 10;
+}
+
 nav ul { 
   display: flex; 
   list-style: none; 
   gap: 26px; 
   margin-left: auto;
+  transition: transform .3s ease-in-out;
 }
+
+nav ul li {
+  position: relative;
+}
+
 nav ul li a {
   text-decoration: none;
   color: white; 
@@ -153,12 +164,14 @@ nav ul li a {
   justify-content: center;
   position: relative;
 }
+
 nav ul li a:hover {
   color: #42a5f5; 
   background: rgba(255, 255, 255, 0.08);
   box-shadow: 0 0 15px rgba(66,165,245,0.4);
   transform: translateY(-2px);
 }
+
 nav ul li a::after {
   content: "";
   position: absolute;
@@ -169,15 +182,43 @@ nav ul li a::after {
   background: #42a5f5;
   transition: 0.3s ease;
 }
+
 nav ul li a:hover::after {
   width: 80%;
   left: 10%;
 }
+
 nav ul li a i {
   margin-right: 6px;
   font-size: 1.6rem;
 }
 
+/* Dropdown */
+.dropdown {
+  display: block;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background:#040814;
+  list-style: none;
+  padding: 10px 0;
+  min-width: 140px;
+  border-radius: 4.5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  pointer-events: none; /* impede clique enquanto invisível */
+  visibility: hidden;    /* torna invisível */
+  opacity: 0;            /* transparente */
+}
+
+/* Mostrar dropdown ao hover */
+.service:hover .dropdown {
+  opacity: 1;
+  visibility: visible;  /* agora clicável */
+  transform: translateY(0); /* animação suave para subir */
+  pointer-events: auto; /* permite clique */
+}
 /* ===== BOTÃO CADASTRAR ===== */
 .login-btn {
   background: #42a5f5; 
@@ -198,6 +239,33 @@ nav ul li a i {
   background: #1e88e5; 
   transform: scale(1.08);
   box-shadow: 0 0 18px #42a5f5;
+}
+
+.robot-gif-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.robot-gif {
+  width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #00bfff;
+  animation: pulse 3s ease-in-out infinite;
+}
+/* BOTÃO HAMBURGER */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+}
+
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px #00bfff); }
+  50% { transform: scale(1.05); filter: drop-shadow(0 0 25px #00bfff); }
 }
 
 
@@ -359,4 +427,144 @@ footer {
 footer a {
   color: #42a5f5;
   text-decoration: none;
+}
+
+
+/* ============================= */
+/* RESPONSIVO GERAL */
+/* ============================= */
+@media (max-width: 600px) {
+  nav{
+    height: 70px;
+  }
+  nav ul { gap: 20px; }
+  nav ul li a { font-size: 1.1rem; padding: 9px; }
+  .login-btn { padding: 8px 16px; font-size: 0.9rem; margin-left: 30px; }
+  header h1 { font-size: 2rem; }
+  header p { font-size: 1.1rem; }
+  .hero p { font-size: 1.1rem; }
+  .hero button { font-size: 0.95rem; padding: 9px 18px; }
+}
+
+@media (max-width: 480px) {
+  nav ul { gap: 15px; }
+  nav ul li a { font-size: 1rem; padding: 8px; }
+  .login-btn { padding: 7px 14px; font-size: 0.85rem; margin-left: 20px; }
+  header h1 { font-size: 1.8rem; }
+  header p { font-size: 1rem; }
+  .hero p { font-size:1rem; }
+  .hero button { font-size: 0.9rem; padding: 8px 16px; }
+}
+
+@media (max-width: 360px) {
+  nav { padding: 10px 15px; }
+  .logo-small { left: 15px; top: 10px; }
+  .logo-small img { width: 32px; height: 32px; }
+  #techbot { width: 220px; padding: 10px 15px; }
+  #techbot img { width: 50px; height: 50px; }
+}
+
+/* ============================= */
+/* MENU DESKTOP - DROPDOWN */
+/* ============================= */
+nav ul li.service {
+  position: relative; /* necessário para dropdown */
+}
+
+nav ul li.service .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #1a1a2e;
+  min-width: 150px;
+  display: none; /* inicialmente escondido */
+  flex-direction: column;
+  padding: 10px 0;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+nav ul li.service:hover .dropdown {
+  display: flex; /* aparece ao passar o mouse */
+  height: auto;
+  border-radius: 10px;
+}
+
+nav ul li.service .dropdown li a {
+  padding: 8px 15px;
+  width: 100%;
+  text-align: left;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+/* ============================= */
+/* RESPONSIVO - MOBILE */
+/* ============================= */
+@media (max-width: 768px) {
+  nav{
+    height: 70px;
+  }
+  nav ul {
+    position: fixed;
+    top: 0;
+    right: -200px; /* começa fora da tela do lado direito */
+    flex-direction: column;
+    background: #040814;
+    width: 200px; /* largura menor */
+    height: 100vh;
+    padding-top: 80px;
+    gap: 20px;
+    transition: right 0.3s ease;
+    border-left: 1px solid rgba(255,255,255,0.1);
+    z-index: 20;
+  }
+
+  nav ul li {
+    width: 80%;
+    text-align: center;
+  }
+  nav ul li .login-btn{
+    width: 80%;
+  }
+
+  nav ul li a,
+  nav ul li .login-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Dropdown inicialmente escondido */
+  nav ul li.service .dropdown {
+    position: static;
+    display: none;
+    flex-direction: column;
+    background: #1a1a2e;
+    box-shadow: none;
+    border-radius: 0;
+    min-width: 100%;
+    padding: 0;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Mostrar dropdown quando clicar */
+  nav ul li.service.active .dropdown {
+    display: flex;
+  }
+
+  /* Botão hamburger à direita */
+  .menu-toggle {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 30;
+    cursor: pointer;
+  }
+}
+
+/* MENU ATIVO */
+nav ul.active {
+  right: 0; /* abre o menu do lado direito */
 }

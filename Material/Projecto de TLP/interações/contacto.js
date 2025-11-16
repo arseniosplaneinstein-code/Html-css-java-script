@@ -23,10 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const techbotReactivate = document.getElementById('techbot-reactivate');
 
   // Mostrar TechBot após 3 segundos
+ window.addEventListener("load", () => {
   setTimeout(() => {
-    techbot.style.display = 'block';
-    speak("Olá! Eu sou o TechBot, o guia digital da Robótica Futurista. Quer ouvir sobre o site ou sobre robôs?");
+    techbot.style.display = "block";
+    speak(`Saudações, humano! Eu sou o TechBot 🤖✨
+Você chegou à central de Contactos da Robótica Futurista.
+Diga-me como posso ajudar a aproximar você da nossa equipa incrível!`);
   }, 3000);
+});
+
 
   function speak(text) {
     const utterance = new SpeechSynthesisUtterance(text);
@@ -42,14 +47,21 @@ document.addEventListener('DOMContentLoaded', () => {
       speak("Cliquei!");
     }
   });
+window.techbotSpeakSite = function() {
+  speak("A página de Contato do site Robótica Futurista apresenta o menu principal com Início, Robótica, Serviços, Galeria e Contato, além do botão de cadastrar e a logo oficial. Logo abaixo há um carrossel tridimensional que mostra os seis desenvolvedores do site, representando a área Sobre Nós. No final da página encontra-se o rodapé, com os contactos da equipa, localização e lista de colaboradores. Esta página foi criada para facilitar a comunicação e aproximar os utilizadores da equipa responsável pelo projeto.");
+}
 
-  window.techbotSpeakSite = function() {
-    speak("O site Robótica Futurista tem várias áreas: Início, Robótica, Serviços, Galeria e Contato.");
-  }
 
   window.techbotSpeakRobot = function() {
-    speak("Os robôs são máquinas programáveis com sensores, motores e controladores.");
-  }
+  speak(
+    "Os robôs são máquinas programáveis com sensores, motores e controladores. " +
+    "Na área de contacto, os robôs utilizam sensores de toque e pressão para perceber o ambiente, " +
+    "atuadores de precisão para realizar movimentos suaves e controlados, " +
+    "e materiais seguros para evitar acidentes. " +
+    "Esta área é essencial para que o robô consiga manipular objetos, interagir com pessoas " +
+    "e adaptar-se a diferentes situações durante o trabalho."
+  );
+}
 
   window.techbotBye = function() {
     speak("Até logo! Desligando...");
@@ -122,3 +134,23 @@ function moveLeft() {
 }
 
 updateCards();
+
+  document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+
+  // Abrir/fechar menu burger
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+
+  // Abrir/fechar dropdown no mobile
+  const serviceItem = document.querySelector('nav ul li.service');
+  serviceItem.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768) {
+      e.currentTarget.classList.toggle('active');
+    }
+  });
+});
+
+

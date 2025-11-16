@@ -22,44 +22,103 @@
     <h1>Robótica Futurista</h1>
     <p>Bem-vindo ao mundo da Robótica Futurista!</p>  
   </header>
+<nav>
+  <!-- LOGO -->
+  <div class="logo-small" id="logoSmall">
+    <a href="../Conteudo/index.html">
+      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="Logo">
+    </a>
+    <span>Robótica</span>
+  </div>
 
-  <!-- NAVBAR -->
-  <nav>
-    <div class="logo-small" id="logoSmall">
-      <a href="../Conteudo/index.html"><img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="Logo"></a>
-      <span>Robótica</span>
-    </div>
-    <ul>
-      <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
-      <li><a href="robotica.html"><i class="fa-solid fa-robot"></i></a></li>
-      <li><a href="servicos.html"><i class="fa-solid fa-gear"></i></a></li>
-      <li><a href="galeria.html"><i class="fa-solid fa-image"></i></a></li>
-      <li><a href="contato.html"><i class="fa-solid fa-envelope"></i></a></li>
+  <!-- MENU PRINCIPAL -->
+<ul id="navMenu">
+  <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+  <li><a href="robotica.html"><i class="fa-solid fa-robot"></i></a></li>
+  <li class="service">
+    <a href="servicos.html"><i class="fa-solid fa-gear"></i></a>
+    <ul class="dropdown"> 
+      <li><a href="">Quiz</a></li>
+      <li><a href="">Work Shop</a></li>
     </ul>
-    <button type="button" onclick="window.location.href='../login/login.html'" class="login-btn" ><i class="fa-solid fa-user-plus"></i> Criar Conta</button>
-  </nav>
+    
+  </li>
+  <li><a href="galeria.html"><i class="fa-solid fa-image"></i></a></li>
+  <li><a href="contato.html"><i class="fa-solid fa-envelope"></i></a></li>
+  <li>
+    <a href="../login/login.html" class="login-btn"><i class="fa-solid fa-user-plus" onclick="window.location.href='../login/login.html'"></i> Criar Conta</a>
+  </li>
+</ul>
 
- <!-- Área do Carrossel -->
-<div class="carousel">
-  <div class="group">
-    <div class="card" style="background: url('../imagens/parte-inical/download\ \(1\).jfif');" title="Robô 1"></div>
-    <div class="card" style="background: url('../imagens/parte-inical/download\ \(2\).jfif');" title="Robô 2"></div>
-    <div class="card" style="background: url('../imagens/parte-inical/download\ \(3\).jfif');" title="Robô 3"></div>
-    <div class="card" style="background: url('../imagem');" title="Robô 4"></div>
-    <div class="card" style="background: url('');" title="Robô 5"></div>
-    <div class="card" style="background: url('');" title="Robô 6"></div>
-  </div>
-  <div aria-hidden="true" class="group">
-    <div class="card" style="background: url('');" title="Robô 1"></div>
-    <div class="card" style="background: url('');" title="Robô 2"></div>
-    <div class="card" style="background: url('');" title="Robô 3"></div>
-    <div class="card" style="background: url('');" title="Robô 4"></div>
-    <div class="card" style="background: url('');" title="Robô 5"></div>
-    <div class="card" style="background: url('');" title="Robô 6"></div>
-  </div>
+<!-- BOTÃO HAMBURGER -->
+<div class="menu-toggle" id="menuToggle">
+  <i class="fa-solid fa-bars"></i>
 </div>
+</nav>
+
+  <!-- CARROSSEL DE IMAGENS --> 
+<div class="carousel">
+  
+  <!-- PRIMEIRO GRUPO (6 cards reais) -->
+  <div class="group">
+
+    <div class="card" style="background-image:url('../imagens/parte-inical/carros.jfif');">
+      <span>Carros futuristas são veículos elétricos, inteligentes e autónomos.</span>
+    </div>
+
+    <div class="card" style="background-image:url('../imagens/parte-inical/unimate.jfif');">
+      <span>Unimate futurista: robô inteligente, autônomo e preciso com IA e sensores avançados.</span>
+    </div>
+
+    <div class="card" style="background-image:url('../imagens/parte-inical/relogios.jfif');">
+      <span>dispositivos inteligentes com IA, telas digitais avançadas, conectividade total e funções de saúde e comunicação.</span>
+    </div>
+
+    <div class="card" style="background-image:url('../imagens/parte-inical/elon\ musk\ tesla.jfif');">
+      <span>robôs autônomos com IA, sensores avançados e comunicação em rede para patrulha, vigilância e segurança pública.</span>
+    </div>
+
+    <div class="card" style="background-image:url('../imagens/parte-inical/computadres.jfif');">
+      <span>máquina ultrarrápida com IA avançada, interfaces imersivas e conexão total à nuvem e dispositivos inteligentes.</span>
+    </div>
+
+    <div class="card" style="background-image:url('../imagens/parte-inical/cidade.jfif');">
+      <span> ambiente urbano com tecnologia avançada, transporte autônomo, energia sustentável e infraestrutura inteligente conectada por IA.</span>
+    </div>
+
+  </div>
 
 
+  <!-- SEGUNDO GRUPO (COPIA PARA FICAR INFINITO) -->
+  <div aria-hidden="true" class="group">
+
+    <div class="card" style="background-image:url('../imagens/parte-inical/casa.jfif');">
+      <span>lar inteligente com IA, automação total, energia sustentável e integração completa com dispositivos conectados.</span>
+    </div>
+
+    <div class="card" style="background-image:url('../imagens/parte-inical/consola.jfif');">
+      <span>dispositivo de entretenimento com IA, gráficos imersivos, realidade aumentada/virtual e conectividade total.</span>
+    </div>
+
+    <div class="card" style="background-image:url('../imagens/parte-inical/drone.jfif');">
+      <span>aéreo autônomo com IA, sensores avançados e múltiplas funções de vigilância, entrega e monitoramento.</span>
+    </div>
+
+    <div class="card" style="background-image:url('../imagens/parte-inical/transporte.jfif');">
+      <span>veículos autônomos e sustentáveis que voam, usando energia limpa e navegação inteligente.</span>
+    </div>
+
+    <div class="card" style="background-image:url('../imagens/parte-inical/oculos.jfif');">
+      <span>dispositivos de realidade aumentada com IA, conectividade total e funções interativas avançadas.</span>
+    </div>
+
+    <div class="card" style="background-image:url('../imagens/parte-inical/enfermeira.jfif');">
+      <span>autônomo com IA para cirurgias e monitoramento de pacientes.</span>
+    </div>
+
+  </div>
+
+</div>
 
   <!-- HERO -->
   <section class="hero" id="inicio">
@@ -73,18 +132,18 @@
     <h2><i class="fa-solid fa-microchip"></i> Robótica Futurista</h2>
     <div class="info-conjunto">
       <div class="info-item">
-        <div id="robo"><img src="../imagens/A sleek and innovative smart bracelet designed to….jpeg" alt="Construindo um robô" ></div>
+        <div id="robo"><img src="../imagens/parte-inical/Programando.jfif" alt="Construindo um robô" ></div>
         <h3>Programando o Futuro</h3>
         <p>Aprende como a robótica e a programação estão a transformar o mundo moderno. Do controle de sensores ao uso de inteligência artificial, tudo começa com uma linha de código.</p>
       </div>
       <div class="info-item">
-        <img src="../imagens/The futuristic robot, equipped with a tennis….jpeg" alt="Braço robótico">
+        <img src="../imagens/parte-inical/robos em acção.jfif" alt="Braço robótico">
         <h3>Robôs em 
           Ação</h3>
         <p>Descobre como os robôs são projetados para executar tarefas com precisão e eficiência — desde a indústria até a medicina avançada.</p>
       </div>
       <div class="info-item">
-        <img src="../imagens/9068b240-77fe-420b-89da-cad2cf0aaa5b.jpeg" alt="Robótica e IA">
+        <img src="../imagens/parte-inical/IA.jfif" alt="Robótica e IA">
         <h3>Inteligência Artificial</h3>
         <p>Com a IA, os robôs aprendem a adaptar-se e evoluir, tornando-se parceiros indispensáveis no desenvolvimento de novas tecnologias.</p>
       </div>
@@ -97,6 +156,7 @@
 <button class="btn-site" onclick="techbotSpeakSite()"><i class="fa-solid fa-globe"></i></button>
 <button class="btn-robot" onclick="techbotSpeakRobot()"><i class="fa-solid fa-robot"></i></button>
 <button class="btn-off" onclick="techbotBye()"><i class="fa-solid fa-power-off"></i></button>
+
 </div>
 </div>
 

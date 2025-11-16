@@ -132,3 +132,25 @@ btnsFechar.forEach(btn => {
     detalhes.classList.remove('ativo'); // fecha
   });
 });
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+
+  // Abrir/fechar menu burger
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+
+  // Abrir/fechar dropdown no mobile
+  const serviceItem = document.querySelector('nav ul li.service');
+  serviceItem.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768) {
+      e.currentTarget.classList.toggle('active');
+    }
+  });
+});
+
+
+
