@@ -44,10 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // === Botão "Sobre o site" ===
-  window.techbotSpeakSite = function() {
+ window.techbotSpeakSite = function() {
     playTechbotSound();
-    speak("O site Robótica Futurista tem várias áreas: Início, Robótica, Serviços, Galeria e Contato. Cada uma mostra o poder da tecnologia e inovação!");
-  }
+    speak(
+      "A página inicial do site de Robótica Futurista apresenta um menu com o logo oficial, o ícone da página inicial, a área sobre a evolução robótica, a galeria, os contatos, os serviços e um botão de criar conta. Abaixo do menu, aparece a logo em tamanho maior, seguida de um carrossel que mostra aplicações futuristas da robótica, como casas inteligentes, relógios, óculos, computadores, forças policiais, cidades, consolas, drones e transportes avançados. Mais abaixo, o utilizador encontra três áreas fundamentais do mundo tecnológico: Programando o futuro, Inteligência Artificial e Robôs em ação."
+    );
+}
 
   // === Botão "Sobre robôs" ===
   window.techbotSpeakRobot = function() {

@@ -253,15 +253,30 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Funções globais
-  window.techbotSpeakSite = function () {
+ // Fala sobre os serviços do site
+window.techbotSpeakSite = function (userHasAccount) {
     playTechbotSound();
-    speak("Esta é a Galeria da Robótica, onde exploramos a evolução e o design dos robôs ao longo da história!");
-  };
+    if(userHasAccount) {
+        speak(
+          "Bem-vindo à seção de Serviços! Atualmente temos dois serviços disponíveis: " +
+          "o QUIZ de perguntas, que você pode jogar agora para testar seus conhecimentos sobre robótica, " +
+          "e o Workshop, que estará disponível em breve com kits de robótica e atividades interativas. " +
+          "Divirta-se explorando e aprendendo com a tecnologia futurista!"
+        );
+    } else {
+        speak(
+          "Para acessar os serviços, você precisa criar uma conta primeiro. Clique no botão Criar Conta e depois poderá utilizar os serviços, como o QUIZ de perguntas e os futuros Workshops."
+        );
+    }
+};
 
-  window.techbotSpeakRobot = function () {
+// Fala sobre os robôs, dentro do contexto dos serviços
+window.techbotSpeakRobot = function () {
     playTechbotSound();
-    speak("Os robôs têm diferentes formas e funções — desde máquinas industriais até robôs inteligentes e criativos!");
-  };
+    speak(
+      "Os robôs disponíveis nos serviços incluem desde robôs industriais até robôs inteligentes e criativos, que você pode conhecer melhor no QUIZ ou nos Workshops futuros. Eles exemplificam como a robótica está presente no dia a dia e nas tecnologias futuristas."
+    );
+};
 
   window.techbotBye = function () {
     playTechbotSound();
