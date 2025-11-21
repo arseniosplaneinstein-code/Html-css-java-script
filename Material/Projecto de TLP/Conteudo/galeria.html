@@ -1,328 +1,291 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Galeria</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeria</title>
 
-    <link rel="stylesheet" href="../estilos/galeria.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-<link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" type="image/x-icon"/>
+  <link rel="stylesheet" href="../estilos/galeria.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" type="image/x-icon" />
+</head>
 
-  </head>
+<body>
+  <audio id="techbot-sound" src="https://www.soundjay.com/button/sounds/button-16.mp3" preload="auto"></audio>
 
-  <body>
-    <audio
-      id="techbot-sound"
-      src="https://www.soundjay.com/button/sounds/button-16.mp3"
-      preload="auto"
-    ></audio>
-<nav>
-  <!-- LOGO -->
-  <div class="logo-small" id="logoSmall">
-    <a href="../Conteudo/index.html">
-      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="Logo">
-    </a>
-    <span>Robótica</span>
-  </div>
+  <nav>
+    <!-- LOGO -->
+    <div class="logo-small" id="logoSmall">
+      <a href="../Conteudo/index.html">
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="Logo">
+      </a>
+      <span>Robótica</span>
+    </div>
 
-  <!-- MENU PRINCIPAL -->
-<ul id="navMenu">
-  <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
-  <li><a href="robotica.html"><i class="fa-solid fa-robot"></i></a></li>
-  <li class="service">
-    <a href="servicos.html"><i class="fa-solid fa-gear"></i></a>
-    <ul class="dropdown"> 
-      <li><a href="">Quiz</a></li>
-      <li><a href="">Work Shop</a></li>
+    <!-- MENU PRINCIPAL -->
+    <ul id="navMenu">
+      <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+      <li><a href="robotica.html"><i class="fa-solid fa-robot"></i></a></li>
+      <li class="service">
+        <a href="servicos.html"><i class="fa-solid fa-gear"></i></a>
+        <ul class="dropdown">
+          <li><a href="">Quiz</a></li>
+          <li><a href="">Work Shop</a></li>
+        </ul>
+      </li>
+      <li><a href="galeria.html"><i class="fa-solid fa-image"></i></a></li>
+      <li><a href="contato.html"><i class="fa-solid fa-envelope"></i></a></li>
+      <li>
+        <a href="../login/login.html" class="login-btn"><i class="fa-solid fa-user-plus" onclick="window.location.href='../login/login.html'"></i> Criar Conta</a>
+      </li>
     </ul>
-    
-  </li>
-  <li><a href="galeria.html"><i class="fa-solid fa-image"></i></a></li>
-  <li><a href="contato.html"><i class="fa-solid fa-envelope"></i></a></li>
-  <li>
-    <a href="../login/login.html" class="login-btn"><i class="fa-solid fa-user-plus" onclick="window.location.href='../login/login.html'"></i> Criar Conta</a>
-  </li>
-</ul>
 
-<!-- BOTÃO HAMBURGER -->
-<div class="menu-toggle" id="menuToggle">
-  <i class="fa-solid fa-bars"></i>
-</div>
-</nav>
+    <!-- BOTÃO HAMBURGER -->
+    <div class="menu-toggle" id="menuToggle">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </nav>
 
+  <header>
+    <!-- ===== SEÇÃO DE TÍTULO COM VÍDEO ===== -->
+    <section class="hero-video">
+      <video autoplay muted loop id="bg-video">
+        <source src="../midias/invideo-ai-720 Robôs_ Da Engrenagem à Inteligência 2025-11-02.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos em HTML5.
+      </video>
 
-    <header>
-     <!-- ===== SEÇÃO DE TÍTULO COM VÍDEO ===== -->
-<section class="hero-video">
-  <video autoplay muted loop id="bg-video">
-    <source src="../midias/invideo-ai-720 Robôs_ Da Engrenagem à Inteligência 2025-11-02.mp4" type="video/mp4">
-    Seu navegador não suporta vídeos em HTML5.
-  </video>
-
-  <div class="hero-content">
-    <h1>ÁREA DA ROBÓTICA</h1>
-    <p>A robótica é aplicada em diversas áreas do conhecimento, transformando o modo como trabalhamos, aprendemos e vivemos. 
-       Desde a medicina até à agricultura, os robôs ajudam a tornar as tarefas mais rápidas, seguras e inteligentes.</p>
-  </div>
-</section>
-
-
-    </header>
-<div class="container">
-<div class="card">
-  <div class="imagem">
-    <img src="../imagens/From planting to harvesting, AI-driven robots are….jpeg" alt="Robótica na Agricultura">
-  </div>
-  <div class="conteudo">
-    <h2>Agricultura</h2>
-    <p>Robôs agrícolas ajudam a plantar, regar e colher com alta precisão e menos esforço humano.</p>
-    <button class="btn-detalhes">Ver mais</button>
-
-    <!-- Div de detalhes -->
-    <div class="detalhes-card">
-      <h3>Mais sobre Agricultura</h3>
-      <p>Esses robôs automatizam todo o ciclo agrícola, incluindo plantio, irrigação e colheita, aumentando a produtividade e reduzindo custos.</p>
-      <button class="btn-fechar">Fechar</button>
-    </div>
-  </div>
-</div>
-
-
-  <!-- MEDICINA -->
-  <div class="card">
-    <div class="imagem">
-      <img src="../imagens/efe62bb4-1aef-4757-aca1-c687e862413e.jpeg" alt="Robótica na Medicina">
-    </div>
-    <div class="conteudo">
-      <h2>Medicina</h2>
-      <p>Cirurgias assistidas por robôs garantem maior precisão e segurança para os pacientes.</p>
-      <button class="btn-detalhes">Ver mais</button>
-    </div>
-
-     <!-- Div de detalhes -->
-    <div class="detalhes-card">
-      <h3>Mais sobre Agricultura</h3>
-      <p>Esses robôs automatizam todo o ciclo agrícola, incluindo plantio, irrigação e colheita, aumentando a produtividade e reduzindo custos.</p>
-      <button class="btn-fechar">Fechar</button>
-    </div>
-  </div>
-
-  <!-- CULINÁRIA -->
-  <div class="card">
-    <div class="imagem">
-      <img src="../imagens/Chef robotics seeks talent.jpeg" alt="Robótica na Culinária">
-    </div>
-    <div class="conteudo">
-      <h2>Culinária</h2>
-      <p>Robôs chefs conseguem preparar refeições complexas com rapidez e perfeição, sem erros de receita!</p>
-      <button class="btn-detalhes">Ver mais</button>
-    </div>
-
-     <!-- Div de detalhes -->
-    <div class="detalhes-card">
-      <h3>Mais sobre Agricultura</h3>
-      <p>Esses robôs automatizam todo o ciclo agrícola, incluindo plantio, irrigação e colheita, aumentando a produtividade e reduzindo custos.</p>
-      <button class="btn-fechar">Fechar</button>
-    </div>
-  </div>
-
-  <!-- EDUCAÇÃO -->
-  <div class="card">
-    <div class="imagem">
-      <img src="../imagens/57377a6e-996b-4e47-8081-b0bca1c0ec15.jpeg" alt="Robótica na Educação">
-    </div>
-    <div class="conteudo">
-      <h2>Educação</h2>
-      <p>Robôs educacionais ajudam alunos a aprender programação, matemática e ciências de forma divertida.</p>
-      <button class="btn-detalhes">Ver mais</button>
-    </div>
-     <!-- Div de detalhes -->
-    <div class="detalhes-card">
-      <h3>Mais sobre Agricultura</h3>
-      <p>Esses robôs automatizam todo o ciclo agrícola, incluindo plantio, irrigação e colheita, aumentando a produtividade e reduzindo custos.</p>
-      <button class="btn-fechar">Fechar</button>
-    </div>
-  </div>
-
-  <!-- INDÚSTRIA -->
-  <div class="card">
-    <div class="imagem">
-      <img src="../imagens/Free Robotic Assembly Line Image _ Download at StockCake.jpeg" alt="Robótica na Indústria">
-    </div>
-    <div class="conteudo">
-      <h2>Indústria</h2>
-      <p>Robôs industriais realizam tarefas repetitivas e pesadas, aumentando a produtividade e segurança.</p>
-      <button class="btn-detalhes">Ver mais</button>
-    </div>
-     <!-- Div de detalhes -->
-    <div class="detalhes-card">
-      <h3>Mais sobre Agricultura</h3>
-      <p>Esses robôs automatizam todo o ciclo agrícola, incluindo plantio, irrigação e colheita, aumentando a produtividade e reduzindo custos.</p>
-      <button class="btn-fechar">Fechar</button>
-    </div>
-  </div>
-
-  <!-- SEGURANÇA -->
-  <div class="card">
-    <div class="imagem">
-      <img src="../imagens/segurança.jpeg" alt="Robótica na Segurança">
-    </div>
-    <div class="conteudo">
-      <h2>Segurança</h2>
-      <p>Robôs patrulheiros e drones inteligentes ajudam a manter cidades e empresas mais seguras.</p>
-      <button class="btn-detalhes">Ver mais</button>
-    </div>
-     <!-- Div de detalhes -->
-    <div class="detalhes-card">
-      <h3>Mais sobre Agricultura</h3>
-      <p>Esses robôs automatizam todo o ciclo agrícola, incluindo plantio, irrigação e colheita, aumentando a produtividade e reduzindo custos.</p>
-      <button class="btn-fechar">Fechar</button>
-    </div>
-  </div>
-
-  <!-- ESPAÇO -->
-  <div class="card">
-    <div class="imagem">
-      <img src="../imagens/IMG-20251101-WA0003.jpg" alt="Robótica no Espaço">
-    </div>
-    <div class="conteudo">
-      <h2>Exploração Espacial</h2>
-      <p>Robôs espaciais como rovers exploram planetas e luas, coletando dados em ambientes extremos.</p>
-      <button class="btn-detalhes">Ver mais</button>
-    </div>
-     <!-- Div de detalhes -->
-    <div class="detalhes-card">
-      <h3>Mais sobre Agricultura</h3>
-      <p>Esses robôs automatizam todo o ciclo agrícola, incluindo plantio, irrigação e colheita, aumentando a produtividade e reduzindo custos.</p>
-      <button class="btn-fechar">Fechar</button>
-    </div>
-  </div>
-
-  <!-- ENTRETENIMENTO -->
-  <div class="card">
-    <div class="imagem">
-      <img src="../imagens/IMG-20251101-WA0001.jpg" alt="Robótica no Entretenimento">
-    </div>
-    <div class="conteudo">
-      <h2>Entretenimento</h2>
-      <p>Robôs animatrônicos e drones criam espetáculos incríveis em parques, filmes e eventos.</p>
-      <button class="btn-detalhes">Ver mais</button>
-    </div>
-     <!-- Div de detalhes -->
-    <div class="detalhes-card">
-      <h3>Mais sobre Agricultura</h3>
-      <p>Esses robôs automatizam todo o ciclo agrícola, incluindo plantio, irrigação e colheita, aumentando a produtividade e reduzindo custos.</p>
-      <button class="btn-fechar">Fechar</button>
-    </div>
-  </div>
-
-  <!-- TRANSPORTE -->
-  <div class="card">
-    <div class="imagem">
-      <img src="../imagens/transporte.jpg" alt="Robótica no Transporte">
-    </div>
-    <div class="conteudo">
-      <h2>Transporte</h2>
-      <p>Veículos autônomos utilizam robótica avançada para navegar com segurança sem motorista humano.</p>
-      <button class="btn-detalhes">Ver mais</button>
-    </div>
-     <!-- Div de detalhes -->
-    <div class="detalhes-card">
-      <h3>Mais sobre Agricultura</h3>
-      <p>Esses robôs automatizam todo o ciclo agrícola, incluindo plantio, irrigação e colheita, aumentando a produtividade e reduzindo custos.</p>
-      <button class="btn-fechar">Fechar</button>
-    </div>
-  </div>
-
-  <!-- CASA INTELIGENTE -->
-  <div class="card">
-    <div class="imagem">
-      <img src="../imagens/casa-inteligente.jpg" alt="Robótica Doméstica">
-    </div>
-    <div class="conteudo">
-      <h2>Casa Inteligente</h2>
-      <p>Assistentes domésticos e aspiradores robóticos tornam o dia a dia mais prático e eficiente.</p>
-      <button class="btn-detalhes">Ver mais</button>
-    </div>
-     <!-- Div de detalhes -->
-    <div class="detalhes-card">
-      <h3>Mais sobre Agricultura</h3>
-      <p>Esses robôs automatizam todo o ciclo agrícola, incluindo plantio, irrigação e colheita, aumentando a produtividade e reduzindo custos.</p>
-      <button class="btn-fechar">Fechar</button>
-    </div>
-  </div>
-
-   <div class="card">
-    <div class="imagem">
-      <img src="../imagens/casa-inteligente.jpg" alt="Robótica Doméstica">
-    </div>
-    <div class="conteudo">
-      <h2>Casa Inteligente</h2>
-      <p>Assistentes domésticos e aspiradores robóticos tornam o dia a dia mais prático e eficiente.</p>
-      <button class="btn-detalhes">Ver mais</button>
-    </div>
-     <!-- Div de detalhes -->
-    <div class="detalhes-card">
-      <h3>Mais sobre Agricultura</h3>
-      <p>Esses robôs automatizam todo o ciclo agrícola, incluindo plantio, irrigação e colheita, aumentando a produtividade e reduzindo custos.</p>
-      <button class="btn-fechar">Fechar</button>
-    </div>
-  </div>
-
-   <div class="card">
-    <div class="imagem">
-      <img src="../imagens/casa-inteligente.jpg" alt="Robótica Doméstica">
-    </div>
-    <div class="conteudo">
-      <h2>Casa Inteligente</h2>
-      <p>Assistentes domésticos e aspiradores robóticos tornam o dia a dia mais prático e eficiente.</p>
-      <button class="btn-detalhes">Ver mais</button>
-    </div>
-     <!-- Div de detalhes -->
-    <div class="detalhes-card">
-      <h3>Mais sobre Agricultura</h3>
-      <p>Esses robôs automatizam todo o ciclo agrícola, incluindo plantio, irrigação e colheita, aumentando a produtividade e reduzindo custos.</p>
-      <button class="btn-fechar">Fechar</button>
-    </div>
-  </div>
-
-  
-
-</div>
-
-
-
-
-  
-    <!-- ===== TECHBOT ===== -->
-    <div id="techbot">
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png"
-        alt="TechBot"
-      />
-      <div id="techbot-buttons">
-        <button class="btn-site" onclick="techbotSpeakSite()">
-          <i class="fa-solid fa-globe"></i>
-        </button>
-        <button class="btn-robot" onclick="techbotSpeakRobot()">
-          <i class="fa-solid fa-robot"></i>
-        </button>
-        <button class="btn-off" onclick="techbotBye()">
-          <i class="fa-solid fa-power-off"></i>
-        </button>
+      <div class="hero-content">
+        <h1>ÁREA DA ROBÓTICA</h1>
+        <p>A robótica é aplicada em diversas áreas do conhecimento, transformando o modo como trabalhamos, aprendemos e vivemos. 
+          Desde a medicina até à agricultura, os robôs ajudam a tornar as tarefas mais rápidas, seguras e inteligentes.</p>
       </div>
-    </div>  
+    </section>
+  </header>
 
-    <div id="techbot-reactivate">
-      <i class="fa-solid fa-robot"></i>
+  <div class="container">
+
+    <!-- AGRICULTURA -->
+    <div class="card">
+      <div class="imagem">
+        <img src="../imagens/From planting to harvesting, AI-driven robots are….jpeg" alt="Robótica na Agricultura">
+      </div>
+      <div class="conteudo">
+        <h2>Agricultura</h2>
+        <p>Robôs agrícolas ajudam a plantar, regar e colher com alta precisão e menos esforço humano.</p>
+        <button class="btn-detalhes">Ver mais</button>
+        <div class="detalhes-card">
+          <h3>Agricultura</h3>
+          <p>Na agricultura, os robôs são utilizados para plantio, irrigação, monitoramento do solo e colheita automatizada. Isso reduz custos e aumenta a produtividade.</p>
+          <button class="btn-fechar">Fechar</button>
+        </div>
+      </div>
     </div>
 
-  <footer> &copy; 2025 Galeria Futurista  </footer> 
-      
-    </script><script src="../interações/galeria.js"></script>
-</body> 
+    <!-- MEDICINA -->
+    <div class="card">
+      <div class="imagem">
+        <img src="../imagens/efe62bb4-1aef-4757-aca1-c687e862413e.jpeg" alt="Robótica na Medicina">
+      </div>
+      <div class="conteudo">
+        <h2>Medicina</h2>
+        <p>Cirurgias assistidas por robôs garantem maior precisão e segurança para os pacientes.</p>
+        <button class="btn-detalhes">Ver mais</button>
+        <div class="detalhes-card">
+          <h3>Medicina</h3>
+          <p>Na medicina, robôs cirúrgicos garantem precisão extrema, diminuem riscos e permitem cirurgias minimamente invasivas.</p>
+          <button class="btn-fechar">Fechar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CULINÁRIA -->
+    <div class="card">
+      <div class="imagem">
+        <img src="../imagens/Chef robotics seeks talent.jpeg" alt="Robótica na Culinária">
+      </div>
+      <div class="conteudo">
+        <h2>Culinária</h2>
+        <p>Robôs chefs conseguem preparar refeições complexas com rapidez e perfeição, sem erros de receita!</p>
+        <button class="btn-detalhes">Ver mais</button>
+        <div class="detalhes-card">
+          <h3>Culinária</h3>
+          <p>Robôs culinários são capazes de preparar pratos completos, seguir receitas complexas e trabalhar com rapidez e perfeição.</p>
+          <button class="btn-fechar">Fechar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- EDUCAÇÃO -->
+    <div class="card">
+      <div class="imagem">
+        <img src="../imagens/57377a6e-996b-4e47-8081-b0bca1c0ec15.jpeg" alt="Robótica na Educação">
+      </div>
+      <div class="conteudo">
+        <h2>Educação</h2>
+        <p>Robôs educacionais ajudam alunos a aprender programação, matemática e ciências de forma divertida.</p>
+        <button class="btn-detalhes">Ver mais</button>
+        <div class="detalhes-card">
+          <h3>Educação</h3>
+          <p>Na educação, robôs ajudam no ensino de programação, matemática e ciências, tornando o aprendizado mais dinâmico e interativo.</p>
+          <button class="btn-fechar">Fechar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- INDÚSTRIA -->
+    <div class="card">
+      <div class="imagem">
+        <img src="../imagens/Free Robotic Assembly Line Image _ Download at StockCake.jpeg" alt="Robótica na Indústria">
+      </div>
+      <div class="conteudo">
+        <h2>Indústria</h2>
+        <p>Robôs industriais realizam tarefas repetitivas e pesadas, aumentando a produtividade e segurança.</p>
+        <button class="btn-detalhes">Ver mais</button>
+        <div class="detalhes-card">
+          <h3>Indústria</h3>
+          <p>Robôs industriais executam tarefas repetitivas, perigosas e de alta precisão, aumentando a segurança e eficiência nas fábricas.</p>
+          <button class="btn-fechar">Fechar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEGURANÇA -->
+    <div class="card">
+      <div class="imagem">
+        <img src="../imagens/segurança.jpeg" alt="Robótica na Segurança">
+      </div>
+      <div class="conteudo">
+        <h2>Segurança</h2>
+        <p>Robôs patrulheiros e drones inteligentes ajudam a manter cidades e empresas mais seguras.</p>
+        <button class="btn-detalhes">Ver mais</button>
+        <div class="detalhes-card">
+          <h3>Segurança</h3>
+          <p>Na área de segurança, robôs patrulheiros e drones monitoram ambientes, detectam ameaças e ajudam na proteção de pessoas e empresas.</p>
+          <button class="btn-fechar">Fechar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ESPAÇO -->
+    <div class="card">
+      <div class="imagem">
+        <img src="../imagens/IMG-20251101-WA0003.jpg" alt="Robótica no Espaço">
+      </div>
+      <div class="conteudo">
+        <h2>Exploração Espacial</h2>
+        <p>Robôs espaciais como rovers exploram planetas e luas, coletando dados em ambientes extremos.</p>
+        <button class="btn-detalhes">Ver mais</button>
+        <div class="detalhes-card">
+          <h3>Exploração Espacial</h3>
+          <p>Robôs espaciais como rovers exploram planetas, recolhem amostras e enviam dados de locais que seriam impossíveis para humanos visitarem.</p>
+          <button class="btn-fechar">Fechar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ENTRETENIMENTO -->
+    <div class="card">
+      <div class="imagem">
+        <img src="../imagens/IMG-20251101-WA0001.jpg" alt="Robótica no Entretenimento">
+      </div>
+      <div class="conteudo">
+        <h2>Entretenimento</h2>
+        <p>Robôs animatrônicos e drones criam espetáculos incríveis em parques, filmes e eventos.</p>
+        <button class="btn-detalhes">Ver mais</button>
+        <div class="detalhes-card">
+          <h3>Entretenimento</h3>
+          <p>No entretenimento, robôs animatrônicos e drones criam efeitos especiais, shows de luzes e personagens realistas em parques e filmes.</p>
+          <button class="btn-fechar">Fechar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRANSPORTE -->
+    <div class="card">
+      <div class="imagem">
+        <img src="../imagens/transporte.jpg" alt="Robótica no Transporte">
+      </div>
+      <div class="conteudo">
+        <h2>Transporte</h2>
+        <p>Veículos autônomos utilizam robótica avançada para navegar com segurança sem motorista humano.</p>
+        <button class="btn-detalhes">Ver mais</button>
+        <div class="detalhes-card">
+          <h3>Transporte</h3>
+          <p>Veículos autónomos utilizam sensores e inteligência artificial para se moverem com segurança sem intervenção humana.</p>
+          <button class="btn-fechar">Fechar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASA INTELIGENTE -->
+    <div class="card">
+      <div class="imagem">
+        <img src="../imagens/casa-inteligente.jpg" alt="Robótica Doméstica">
+      </div>
+      <div class="conteudo">
+        <h2>Casa Inteligente</h2>
+        <p>Assistentes domésticos e aspiradores robóticos tornam o dia a dia mais prático e eficiente.</p>
+        <button class="btn-detalhes">Ver mais</button>
+        <div class="detalhes-card">
+          <h3>Casa Inteligente</h3>
+          <p>Na robótica doméstica, robôs aspiradores, assistentes virtuais e sistemas automatizados tornam a rotina mais prática e económica.</p>
+          <button class="btn-fechar">Fechar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROBÓTICA MILITAR -->
+    <div class="card">
+      <div class="imagem">
+        <img src="../imagens/robotica-militar.jpg" alt="Robótica Militar">
+      </div>
+      <div class="conteudo">
+        <h2>Robótica Militar</h2>
+        <p>Robôs militares e drones táticos realizam reconhecimento e vigilância com maior segurança.</p>
+        <button class="btn-detalhes">Ver mais</button>
+        <div class="detalhes-card">
+          <h3>Robótica Militar</h3>
+          <p>Robôs militares e drones táticos realizam reconhecimento, desarmamento de bombas e vigilância de fronteiras com maior segurança.</p>
+          <button class="btn-fechar">Fechar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROBÓTICA PARA DESASTRES NATURAIS -->
+    <div class="card">
+      <div class="imagem">
+        <img src="../imagens/robotica-desastres.jpg" alt="Robótica em Desastres Naturais">
+      </div>
+      <div class="conteudo">
+        <h2>Robótica em Desastres Naturais</h2>
+        <p>Robôs de resgate ajudam a salvar vidas em áreas perigosas.</p>
+        <button class="btn-detalhes">Ver mais</button>
+        <div class="detalhes-card">
+          <h3>Robótica em Desastres Naturais</h3>
+          <p>Robôs de resgate entram em áreas perigosas após terremotos, incêndios ou enchentes para localizar sobreviventes e ajudar equipes de emergência.</p>
+          <button class="btn-fechar">Fechar</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== TECHBOT ===== -->
+  <div id="techbot">
+    <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="TechBot" />
+    <div id="techbot-buttons">
+      <button class="btn-site" onclick="techbotSpeakSite()"><i class="fa-solid fa-globe"></i></button>
+      <button class="btn-robot" onclick="techbotSpeakRobot()"><i class="fa-solid fa-robot"></i></button>
+      <button class="btn-off" onclick="techbotBye()"><i class="fa-solid fa-power-off"></i></button>
+    </div>
+  </div>
+
+  <div id="techbot-reactivate"><i class="fa-solid fa-robot"></i></div>
+
+  <footer>&copy; 2025 Galeria Futurista</footer>
+
+  <script src="../interações/galeria.js"></script>
+</body>
+
+</html>
