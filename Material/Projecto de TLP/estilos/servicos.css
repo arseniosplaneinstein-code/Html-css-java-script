@@ -635,9 +635,11 @@ nav ul li a i {
   margin-right: 6px;
   font-size: 1.6rem;
 }
-
-/* ===== PERFIL DO USUÁRIO ===== */
+/* ===== PERFIL DO USUÁRIO - SEMPRE À DIREITA ===== */
 #user-profile {
+  position: absolute;     /* sempre fora do fluxo */
+  top: 10px;              /* distância do topo */
+  right: 10px;            /* sempre no lado direito */
   display: flex;
   align-items: center;
   gap: 10px;
@@ -646,16 +648,24 @@ nav ul li a i {
   background: rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
   cursor: pointer;
+  z-index: 1000;          /* garante que fique acima do menu */
 }
 
-/* Sombra suave e leve elevação */
+/* Mantém responsivo */
+@media (max-width: 480px) {
+  #user-profile {
+    right: 10px;          /* continua no lado direito */
+    top: 10px;            /* ajusta se necessário */
+  }
+}
+
+/* Efeitos do perfil */
 #user-profile:hover {
   background: rgba(66, 165, 245, 0.2);
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(66, 165, 245, 0.4);
 }
 
-/* Imagem do usuário */
 #user-profile img {
   border-radius: 50%;
   width: 35px;
@@ -664,24 +674,22 @@ nav ul li a i {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efeito hover na imagem */
 #user-profile img:hover {
   transform: scale(1.1);
   box-shadow: 0 0 11px #4999db7e;
 }
 
-/* Nome do usuário */
 #user-profile span {
   color: #ffffff;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
-/* Efeito hover no nome */
 #user-profile:hover span {
   color: #42a5f5;
   text-shadow: 0 0 8px rgba(66, 165, 245, 0.7);
 }
+
 
 /* ===== BOTÃO CADASTRAR ===== */
 .login-btn {
@@ -704,46 +712,49 @@ nav ul li a i {
   transform: scale(1.08);
   box-shadow: 0 0 18px #42a5f5;
 }
+/* ===== ANIMAÇÃO DE TEXTO RESPONSIVA ===== */
+.typewriter {
+  color: #e3f2fd;
+  text-shadow: 0 0 10px #42a5f5;
+  display: inline-block;
+  white-space: nowrap;        /* SEMPRE 1 linha */
+  overflow: hidden;           /* impede scroll */
+  max-width: 100%;            /* nunca ultrapassa a tela */
+  border-right: 3px solid #42a5f5;
+  font-size: clamp(0.7rem, 4vw, 1.6rem); /* responsivo para qualquer tela */
+  animation: typing 4s steps(40, end) infinite,
+             blink 0.7s step-end infinite;
+}
 
+/* Impede rolagem horizontal no site */
+body {
+  overflow-x: hidden;
+}
 
-  /* ===== ANIMAÇÃO DE TEXTO ===== */
+/* KEYFRAMES */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }  /* anima toda a largura disponível */
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Ajustes opcionais para telas muito pequenas */
+@media (max-width: 360px) {
   .typewriter {
-    font-size: 1.6rem;
-    color: #e3f2fd;
-    text-shadow: 0 0 10px #42a5f5;
-    white-space: nowrap;
-    border-right: 3px solid #42a5f5;
-    width: 34ch;
-    overflow: hidden;
-    animation: typing 8s steps(34, end) infinite alternate,
-      blink 0.9s step-end infinite;
-    margin: 20px auto;
+    font-size: 0.8rem;        /* garante que ainda caiba */
+    border-right: 2px solid #42a5f5;
   }
+}
 
-  @keyframes typing {
-    0% {
-      width: 0;
-    }
-    40% {
-      width: 34ch;
-    }
-    60% {
-      width: 34ch;
-    }
-    100% {
-      width: 0;
-    }
+@media (max-width: 320px) {
+  .typewriter {
+    font-size: 0.7rem;        /* ajuste final para telas minúsculas */
+    border-right: 2px solid #42a5f5;
   }
-
-  @keyframes blink {
-    0%,
-    100% {
-      border-color: transparent;
-    }
-    50% {
-      border-color: #42a5f5;
-    }
-  }
+}
 
   /* ===== LOGIN ===== */
   #login-area {

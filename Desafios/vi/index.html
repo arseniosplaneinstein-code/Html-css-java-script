@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exemplo</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        body{
+            text-align: center;
+            background-color: black;
+            color: white;
+        }
+
+        /* Área visível */
+        .linha{
+            width: 100%;
+            overflow: hidden;
+            background: beige;
+            padding: 20px 0;
+        }
+
+        /* Linha que se move */
+        .container{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: max-content; /* impede quebra de linha */
+            padding: 0 20px;
+            animation: girando 20s linear infinite;
+        }
+
+        /* CARD */
+        .card{
+            width: 250px;
+            height: 230px;
+            padding: 1em;
+            background-color: azure;
+            border-radius: 1.2em;
+            text-align: center;
+            align-content: center;
+            box-shadow: 0 0 10px #071622a6;
+            transition: .5s ease;
+        }
+
+        /* Efeito no texto */
+        .card span{
+            color: black;
+            font-size: 0.8em;
+            opacity: 0;
+            transform: translateY(13px);
+            transition: .4s ease;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .card:hover span{
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Efeito Card */
+        .card:hover{
+            background-color: #03255796;
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(66, 164, 245, 0.76);
+        }
+
+        /* Animação de rolagem horizontal */
+        @keyframes girando {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); } /* movimento mais natural */
+        }
+    </style>
+</head>
+<body>
+    <h1>Exemplo</h1>
+
+    <div class="linha">
+        <div class="container">
+            <div class="card"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span></div>
+            <div class="card"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span></div>
+            <div class="card"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span></div>
+            <div class="card"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span></div>
+            <div class="card"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span></div>
+            <div class="card"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span></div>
+            <div class="card"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span></div>
+            <div class="card"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span></div>
+            <div class="card"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span></div>
+            <div class="card"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span></div>
+        </div>
+    </div>
+
+</body>
+</html>

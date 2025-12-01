@@ -91,7 +91,7 @@ header p {
   width: 250px;
   height: 330px;
   padding: 1em;
-  
+  margin: 10px;
   background-blend-mode: overlay;
   background-size: cover;
   background-position: center;

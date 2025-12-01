@@ -219,6 +219,104 @@ nav ul li a i {
   transform: translateY(0); /* animação suave para subir */
   pointer-events: auto; /* permite clique */
 }
+
+
+/* ===== TECHBOT ===== */
+#techbot {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: rgba(66, 165, 245, 0.08);
+  border: 2px solid #42a5f5; 
+  border-radius: 20px; 
+  backdrop-filter: blur(6px);
+  padding: 15px 20px;
+  width: 250px;
+  box-shadow: 0 0 15px #1e88e5;
+  display: none; 
+  animation: fadeIn 1s ease forwards; 
+  z-index: 9999; 
+  text-align: center;
+}
+
+#techbot img {
+  width: 60px; 
+  height: 60px; 
+  border-radius: 50%;
+  animation: float 3s ease-in-out infinite; 
+  margin-bottom: 10px;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== BOTÕES DO TECHBOT ===== */
+#techbot-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 5px;
+}
+#techbot-buttons button {
+  border: none; 
+  border-radius: 12px; 
+  color: white;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  cursor: pointer; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 4px;
+  flex: 1;
+  min-width: 60px;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+/* ===== CORES DOS BOTÕES ===== */
+.btn-site { background-color: #42a5f5; }
+.btn-robot { background-color: #66bb6a; }
+.btn-off   { background-color: #ef5350; }
+
+#techbot-buttons button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* ===== BOTÃO REATIVAR TECHBOT ===== */
+#techbot-reactivate {
+    display: none;
+    position: fixed; 
+    bottom: 30px; 
+    right: 30px; 
+    width: 50px; 
+    height: 50px; 
+    background-color: #42a5f5; 
+    border-radius: 50%; 
+    justify-content: center; 
+    align-items: center; 
+    cursor: pointer;
+    box-shadow: 0 0 15px #1e88e5;
+    z-index: 10000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#techbot-reactivate:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px #1e88e5;
+}
+#techbot-reactivate i {
+    color: white; 
+    font-size: 1.5rem; 
+}
+
 /* ===== BOTÃO CADASTRAR ===== */
 .login-btn {
   background: #42a5f5; 

@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
  window.addEventListener("load", () => {
   setTimeout(() => {
     techbot.style.display = "block";
-    speak(`Saudações, humano! Eu sou o TechBot 🤖✨
+    speak(`Saudações, humano! Eu sou o TechBot
 Você chegou à central de Contactos da Robótica Futurista.
 Diga-me como posso ajudar a aproximar você da nossa equipa incrível!`);
   }, 3000);
