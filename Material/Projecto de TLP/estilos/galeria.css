@@ -618,7 +618,7 @@ footer a {
   width: 90%;
   max-width: 400px;
   padding: 25px;
-  background: rgba(66, 165, 245, 0.15);
+  background:#114c88d7;
   backdrop-filter: blur(12px);
   border-radius: 20px;
   opacity: 0;
@@ -633,6 +633,8 @@ footer a {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
   pointer-events: auto;
+  
+ 
 }
 
 
