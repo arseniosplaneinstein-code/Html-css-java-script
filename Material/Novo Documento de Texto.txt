@@ -1,2 +1,6 @@
-https://arseniosplaneinstein-code.github.io/Html-css-java-script/Material/Projecto%20de%20TLP/Conteudo/robot.html
-https://arseniosplaneinstein-code.github.io/Arsenio_Einsein/tabela.html
+Bom dia, Excelentíssimos jurados e estimados presentes,
+Somos o Grupo 3, composto por seis elementos.
+Temos a honra de apresentar o pré-projeto do site Robotica Futurista, 
+que tem como propósito investigar e divulgar tecnologias avançadas
+ em robótica e seu impacto no futuro, de maneira clara, informativa e acessível.
+
